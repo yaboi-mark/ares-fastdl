@@ -1,0 +1,160 @@
+"Weapon_SpyHunter.Shoot"
+{
+	"channel"	"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_94dB"
+	"volume"	"1.0"
+	"wave"		")weapons/spyhunter_fire.wav"
+}
+
+"Weapon_SpyHunter.ShootCrit"
+{
+	"channel"	"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_94dB"
+	"volume"	"1.0"
+	"wave"		")weapons/spyhunter_fire_crit.wav"
+}
+
+"Weapon_BlitzTeslaBeam.Shoot"
+{
+	"channel"	"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_94dB"
+	"volume"	"1.0"
+	"pitch"		"80, 120"
+    "wave"		")weapons/TeslaBeam_FireSpark.wav"
+}
+
+"Weapon_BlitzTeslaBeam.ShootCrit"
+{
+	"channel"	"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_94dB"
+	"volume"	"1.0"
+	"pitch"		"80, 120"
+	"wave"		")weapons/TeslaBeam_FireCrit.wav"
+}
+
+"Weapon_Raiding.Single"
+{
+	"channel"		"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_94dB"
+	"volume"		"1.0"
+	"wave"			")weapons/marine_shotgun_shoot.wav"
+}
+"Weapon_Raiding.SingleCrit"
+{
+	"channel"		"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_94dB"
+	"volume"		"1.0"
+	"wave"			")weapons/marine_shotgun_shoot_crit.wav"
+}
+
+"Weapon_JungleShotgun.Shoot"
+{
+	"channel"	"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_94dB"
+	"volume"	"1.0"
+	"wave"		")weapons/jungleshot_shoot.wav"
+}
+
+"Weapon_JungleShotgun.ShootCrit"
+{
+	"channel"	"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_94dB"
+	"volume"	"1.0"
+	"wave"		")weapons/jungleshot_shoot_crit.wav"
+}
+
+"Weapon_SuperShotGun_Remaster.Single"
+{
+	"channel"		"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_94dB"
+	"volume"		"1.0"
+	"wave"		")weapons\SuperShotGunKOCW_Fire.wav"
+
+}
+"Weapon_SuperShotGun_Remaster.SingleCrit"
+{
+	"channel"		"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_94dB"
+	"volume"		"1.0"
+	"wave"			")weapons/SuperShotGunKOCW_Fire_Crit.wav"
+}
+
+"Weapon_BIGMAN.Shoot"
+{
+	"channel"	"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_94dB"
+	"volume"	"1.0"
+	"wave"		")weapons/HeavyDutySticky_Fire.wav"
+}
+
+"Weapon_BIGMAN.ShootCrit"
+{
+	"channel"	"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_94dB"
+	"volume"	"1.0"
+	"wave"		")weapons/HeavyDutySticky_FireCrit.wav"
+}
+
+"Weapon_BIGMAN.BoltBack"
+{
+	"channel"	"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_94dB"
+	"volume"	".6"
+	"wave"		")weapons/HeavyDutySticky_BoltBack.wav"
+}
+
+"Weapon_BIGMAN.BoltForward"
+{
+	"channel"	"CHAN_STATIC"
+	"soundlevel"	"SNDLVL_74dB"
+	"volume"	".6"
+	"wave"		"weapons/HeavyDutySticky_BoltForward.wav"
+}
+"Weapon_PistolKnife.Draw"
+{
+	"channel"		"CHAN_STATIC"
+	"soundlevel"	"SNDLVL_74dB"
+	"volume"		"1.0"
+	"wave"			")weapons\draw_pistol_knife.wav"
+}
+"Weapon_PistolKnife.DrawMovement"
+{
+	"channel"		"CHAN_STATIC"
+	"soundlevel"	"SNDLVL_74dB"
+	"volume"		"1.0"
+	"wave"			")weapons\draw_pistol_knife_movement.wav"
+}
+
+"Weapon_PistolKnife.Hit"
+{
+	"channel"		"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_85dB"
+	"volume"		"1.0"
+	"wave"			")weapons\pistol_knife_hit.wav"
+}
+
+"Weapon_Law_Launcher.Shoot"
+{
+	"channel"	"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_94dB"
+	"volume"	"1.0"
+	"wave"		")weapons/wasp_shoot.wav"
+}
+
+"Weapon_Law_Launcher.ShootCrit"
+{
+	"channel"	"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_94dB"
+	"volume"	"1.0"
+	"wave"		")weapons/wasp_shoot_crit.wav"
+}
+
+"Weapon_Law_Launcher.Explode"
+{
+	"channel"	"CHAN_STATIC"
+	"soundlevel"	"SNDLVL_98dB"
+	"volume"	"1"
+	"wave"		")weapons/wasp_explosion1.wav"
+	"wave"		")weapons/wasp_explosion2.wav"
+	"wave"		")weapons/wasp_explosion3.wav"
+}
