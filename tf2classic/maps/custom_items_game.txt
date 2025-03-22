@@ -26,7 +26,6 @@
 			}
 			"static_attrs"
 			{
-				"pyro axe damage bonus"					"1.30769230769"
 				"min_viewmodel_offset"					"10 0 -9"
 				
 			}
@@ -37,6 +36,45 @@
 	"items"
 	{
 		// basegame changes
+		
+		"0"
+		{
+			"name"						"TF_WEAPON_BAT"
+			"prefab"					"weapon_bat"
+			"baseitem"					"1"
+			"item_description"			"#TF_Weapon_Bat_Desc"
+			"model_world"				"models/weapons/w_models/w_bat.mdl"
+			"model_player"				"models/weapons/v_models/v_bat_scout.mdl"
+			"attach_to_hands"			"2"
+			"attributes"
+			{
+				"pyro axe damage bonus"
+				{
+					"attribute_class"	"weapon_enemy_knockback_mod"
+					"value"				"1.5"
+				}
+				"pyro axe damage bonus"
+				{
+					"attribute_class"	"mult_single_wep_deploy_time"
+					"value"				"0.5"
+				}
+				"pyro axe damage bonus"
+				{
+					"attribute_class"	"mult_dmg"
+					"value"				"1.14285714286"
+				}
+				"crit mod disabled"
+				{
+					"attribute_class"	"mult_crit_chance"
+					"value"				"0"
+				}
+				"mod melee crit swing custom damage"
+				{
+					"attribute_class"	"mod_melee_crit_swing_custom_damage"
+					"value"				"33"
+				}
+			}
+		}
 		
 		"2"
 		{
@@ -49,10 +87,39 @@
 			"attach_to_hands"			"2"
 			"attributes"
 			{
-				"pyro axe damage bonus explain"
+				"pyro axe damage bonus"
 				{
-					"attribute_class"	"burn_targets_charge_crit_DISPLAY_ONLY"
-					"value"				"1"
+					"attribute_class"	"mult_dmg"
+					"value"				"1.30769230769"
+				}
+				"crit mod disabled"
+				{
+					"attribute_class"	"mult_crit_chance"
+					"value"				"0"
+				}
+			}
+		}
+		
+		"6"
+		{
+			"name"						"TF_WEAPON_SHOVEL"
+			"prefab"					"weapon_shovel"
+			"baseitem"					"1"
+			"item_description"			"#TF_Weapon_Shovel_Desc"
+			"model_world"				"models/weapons/w_models/w_shovel.mdl"
+			"model_player"				"models/weapons/v_models/v_shovel_soldier.mdl"
+			"attach_to_hands"			"2"
+			"attributes"
+			{
+				"pyro axe damage bonus"
+				{
+					"attribute_class"	"mult_dmg"
+					"value"				"1.30769230769"
+				}
+				"crit mod disabled"
+				{
+					"attribute_class"	"mult_crit_chance"
+					"value"				"0"
 				}
 			}
 		}
@@ -159,6 +226,92 @@
 			"drop_sound"				"#ui/item_metal_weapon_drop.wav"
 		}
 		
+		"57"
+		{
+			"name"						"Anchor"
+			"item_class"				"tf_weapon_anchor"
+            "show_in_armory"			"1"
+			"item_name"					"#TF_Weapon_Anchor"
+			"item_type_name"			"#TF_Weapon_Anchor_Type"
+			"item_description"			"#TF_Weapon_Anchor_Desc"
+			"item_slot"					"melee"
+			"anim_slot"					"item1"
+			"item_logname"				"anchor"
+			"item_iconname"				"anchor"
+			"image_inventory"			"backpack/weapons/w_models/w_anchor"
+			"model_world"				"models/weapons/w_models/w_anchor.mdl"
+			"model_player"				"models/weapons/v_models/v_anchor_soldier.mdl"
+			"attach_to_hands"			"2"
+			"extra_wearable"			"models/player/items/anchor_wearable.mdl"
+			"extra_wearable_bodygroup_toggle_on_active" "anchor"
+			"used_by_classes"
+			{
+				"soldier"				"1"
+			}
+			"static_attrs"
+			{
+				"min_viewmodel_offset"					"8 0 -6"
+				"meter_label"							"#TF_Airtime"
+			}
+			"attributes"
+			{
+				"anchor earthquake"
+				{
+					"attribute_class"	"earthquake_attack_active"
+					"value"				"192.0 0.0 4.0"
+				}
+				"earthquake attack mins anchor"
+				{
+					"attribute_class"	"earthquake_attack_mins_anchor"
+					"value"				"0.5 96.0"
+				}
+				"take crits from projectile airborne simple"
+				{
+					"attribute_class"	"take_crits_projectile_airborne_simple"
+					"value"				"256"
+				}
+				"take crits from projectile during blast jump anchor"
+				{
+					"attribute_class"	"take_crits_projectile_blast_jump"
+					"value"				"1"
+				}
+				"gravity mod active increased"
+				{
+					"attribute_class"	"gravity_mod_active"
+					"value"				"1.3"
+                }
+				"crit mod disabled"
+				{
+					"attribute_class"	"mult_crit_chance"
+					"value"				"0"
+				}
+				"extra wearable bodygroup toggle active"
+				{
+					"attribute_class"	"extra_wearable_bodygroup_toggle_active"
+					"value"				"anchor"
+				}
+				"special taunt"
+				{
+					"attribute_class"	"special_taunt"
+					"value"				"1"
+				}
+				
+				
+				"pyro axe damage bonus"
+				{
+					"attribute_class"	"mult_dmg"
+					"value"				"1.30769230769"
+				}
+				//"crit mod disabled"	//anchor already has this!
+				//{
+				//	"attribute_class"	"mult_crit_chance"
+				//	"value"				"0"
+				//}
+			}
+			"mouse_pressed_sound"		"weapons/melee_anchor_itemselection.wav"
+			"drop_sound"				"weapons/melee_anchor_itemselection_drop.wav"
+		}
+		
 		// actual custom weapons
 		
 		"13000"	// scrapped. mostly because i can't find a model to use.
@@ -255,7 +408,7 @@
 			"item_description"			"#TF_Weapon_Minigun_Desc"
 			"image_inventory"			"backpack/workshop/weapons/c_models/c_tomislav/c_tomislav"
 			"model_world"				"models/weapons/w_models/w_tomislav.mdl"
-			"model_player"				"models/weapons/v_models/v_tomislav_heavy.mdl"			// No barrel to sync, thank god. Still shortened tho so it matches other Minigun proportions
+			"model_player"				"models/weapons/v_models/v_tomislav_heavy.mdl"
 			"attach_to_hands"			"2"
 			"used_by_classes"
 			{
@@ -586,7 +739,8 @@
 			"show_in_armory"			"1"
 			"item_name"					"#TF_Weapon_Brick"
 			"item_type_name"			"#TF_Weapon_Throwable"
-			"item_description"			"#TF_Weapon_Brick_Desc"
+			"item_description"			"
+'Think fast, chucklenuts!'"
 			"image_inventory"			"backpack/weapons/w_models/w_brick"
 			"item_logname"				"brick"
 			"item_iconname"				"brick"
@@ -710,11 +864,6 @@ Weapon - 'Mommyplier!'"
 				"headshot is minicrit"
 				{
 					"attribute_class"	"headshot_is_minicrit"
-					"value"				"1"
-				}
-				"headshot is minicrit"
-				{
-					"attribute_class"	"can_headshot"
 					"value"				"1"
 				}
 				"headshot is minicrit"
@@ -1157,6 +1306,18 @@ Weapon - Mommyplier!"
 					"attribute_class"	"add_maxhealth"
 					"value" 			"-25"
 				}
+				
+				
+				"pyro axe damage bonus"
+				{
+					"attribute_class"	"mult_dmg"
+					"value"				"1.30769230769"
+				}
+				"crit mod disabled"
+				{
+					"attribute_class"	"mult_crit_chance"
+					"value"				"0"
+				}
 			}
 		}
 		"13015"
@@ -1189,6 +1350,18 @@ Weapon - Mommyplier!"
 				{
 					"attribute_class"	"add_maxhealth"
 					"value" 			"-25"
+				}
+				
+				
+				"pyro axe damage bonus"
+				{
+					"attribute_class"	"mult_dmg"
+					"value"				"1.30769230769"
+				}
+				"crit mod disabled"
+				{
+					"attribute_class"	"mult_crit_chance"
+					"value"				"0"
 				}
 			}
 			"visuals"
@@ -1331,22 +1504,22 @@ Weapon - Mommyplier!"
 				"clip size penalty"
 				{
 					"attribute_class"	"mult_clipsize"
-					"value"				"0.75"
+					"value"				"0.5"
 				}
 				"blast splash damage decreased"
 				{
 					"attribute_class"	"mult_explosion_splash_damage"
-					"value"				"0.67"
+					"value"				"0.5"
 				}
 				"weapon_stattrak_module_scale"
 				{
 					"attribute_class"	"mult_reload_time"
-					"value"				"2"
+					"value"				"2.5"
 				}
 				"clipsize increase on kill cap"
 				{
 					"attribute_class"	"clipsize_increase_on_kill_cap"
-					"value"				"3"
+					"value"				"4"
 				}
 			}
 			"visuals"
@@ -1543,6 +1716,33 @@ Weapon - 'Cock Jamers'"
 					"attribute_class"	"add_onkill_addcond_self"
 					"value"				"30 8"
 				}
+				
+				
+				"pyro axe damage bonus"
+				{
+					"attribute_class"	"weapon_enemy_knockback_mod"
+					"value"				"1.5"
+				}
+				"pyro axe damage bonus"
+				{
+					"attribute_class"	"mult_single_wep_deploy_time"
+					"value"				"0.5"
+				}
+				"pyro axe damage bonus"
+				{
+					"attribute_class"	"mult_dmg"
+					"value"				"1.14285714286"
+				}
+				"crit mod disabled"
+				{
+					"attribute_class"	"mult_crit_chance"
+					"value"				"0"
+				}
+				"mod melee crit swing custom damage"
+				{
+					"attribute_class"	"mod_melee_crit_swing_custom_damage"
+					"value"				"33"
+				}
 			}
 		}
 		"13022"	// this is actually just a somewhat modified version of kocw's crooked cleaver
@@ -1735,7 +1935,7 @@ Animations - 'Kylul'"
 			    "weapon_stattrak_module_scale"
 				{
 					"attribute_class"	"mult_postfiredelay"
-					"value" 			"1.5"
+					"value" 			"2"
 				}
 			}
 		}
@@ -2193,7 +2393,10 @@ Animations - 'Kylul'"
 			"name"						"TF_WEAPON_BAT_ATOMIZERONABUDGET"
 			"prefab"					"weapon_bat"
 			"show_in_armory"			"1"
-			"item_description"			"#TF_Weapon_Bat_Desc"
+			"item_description"			"
+'Hey, I can see my base from here!'"
+			"item_name"					"Atomizer"
+			"item_type_name"			"Bat"
 			"model_world"				"models/weapons/w_models/w_bat.mdl"
 			"model_player"				"models/weapons/v_models/v_bat_scout.mdl"
 			"attach_to_hands"			"2"
@@ -2213,6 +2416,33 @@ Animations - 'Kylul'"
 				{
 					"attribute_class"	"mult_postfiredelay"
 					"value"				"1.5"
+				}
+				
+				
+				"pyro axe damage bonus"
+				{
+					"attribute_class"	"weapon_enemy_knockback_mod"
+					"value"				"1.5"
+				}
+				"pyro axe damage bonus"
+				{
+					"attribute_class"	"mult_single_wep_deploy_time"
+					"value"				"0.5"
+				}
+				"pyro axe damage bonus"
+				{
+					"attribute_class"	"mult_dmg"
+					"value"				"1.14285714286"
+				}
+				"crit mod disabled"
+				{
+					"attribute_class"	"mult_crit_chance"
+					"value"				"0"
+				}
+				"mod melee crit swing custom damage"
+				{
+					"attribute_class"	"mod_melee_crit_swing_custom_damage"
+					"value"				"33"
 				}
 			}
 		}
@@ -2248,6 +2478,33 @@ Animations - 'Kylul'"
 				{
 					"attribute_class"	"add_maxhealth"
 					"value"				"-25"
+				}
+				
+				
+				"pyro axe damage bonus"
+				{
+					"attribute_class"	"weapon_enemy_knockback_mod"
+					"value"				"1.5"
+				}
+				"pyro axe damage bonus"
+				{
+					"attribute_class"	"mult_single_wep_deploy_time"
+					"value"				"0.5"
+				}
+				"pyro axe damage bonus"
+				{
+					"attribute_class"	"mult_dmg"
+					"value"				"1.14285714286"
+				}
+				"crit mod disabled"
+				{
+					"attribute_class"	"mult_crit_chance"
+					"value"				"0"
+				}
+				"mod melee crit swing custom damage"
+				{
+					"attribute_class"	"mod_melee_crit_swing_custom_damage"
+					"value"				"33"
 				}
 			}
 		}
@@ -2527,6 +2784,10 @@ Happy californian birthday party, kid."
 				"pyro"					"1"
 			}
 			"show_in_armory"			"1"
+			"static_attrs"
+			{
+				"min_viewmodel_offset"		"10 0 -9"
+			}
 			"attributes"
 			{
 			    "incendiary buckshot"
@@ -2608,6 +2869,11 @@ Back pains suck, I know."
 				"pyro"					"1"
 			}
 			"show_in_armory"			"1"
+			"static_attrs"
+			{
+				"min_viewmodel_offset"		"10 0 -9"
+				"class select override vcd"	"taunt02"
+			}
 			"attributes"
 			{
 			    "incendiary buckshot"
@@ -2615,20 +2881,20 @@ Back pains suck, I know."
 					"attribute_class"	"set_dmgtype_ignite"
 					"value" 			"1"
 				}
-			    "crit from behind"
+			    "minicrit from behind"
 				{
 					"attribute_class"	"crit_from_behind"
 					"value" 			"1"
-				}	
+				}
 			    "fire rate penalty with reduced health"
 				{
 					"attribute_class"	"mult_postfiredelay_with_reduced_health"
 					"value" 			"1.5"
 				}	
-			    "damage penalty"
+			    "crits become minicrits"
 				{
-					"attribute_class"	"DISPLAY"
-					"value" 			"0.75"
+					"attribute_class"	"crits_become_minicrits"
+					"value" 			"1.5"
 				}	
 				"hidden primary max ammo bonus"
 				{
@@ -2663,7 +2929,7 @@ Back pains suck, I know."
                 "weapon_stattrak_module_scale"
 				{
 					"attribute_class"	"mult_dmg"
-					"value"				"0.5625"	// default (0.75) multiplied by the amount on the description (0.75)
+					"value"				"0.75"
 				}
 				"strange restriction type 1"
 				{
@@ -2686,6 +2952,129 @@ Back pains suck, I know."
 				"tracer_effect"         "db_tracer01"
 				"sound_single_shot"		"Weapon_DoubleShotgun.Single"
 				"sound_burst"			"Weapon_DoubleShotgun.SingleCrit"
+			}
+		}
+		"13039"
+		{
+			"name"						"TF_WEAPON_FIREAXE_AXTINGUISHER"
+			"prefab"					"weapon_fireaxe"
+			"show_in_armory"			"1"
+			"item_slot"					"melee"
+			"anim_slot"					"melee"
+			"item_name"					"Axtinguisher"
+			"item_type_name"			"Fire Axe"
+			"item_description"			"
+'Let's say, hypothetically, Pyro burns you at 0% damage.'"
+			"item_logname"				"axtinguisher"
+			"item_iconname"				"axtinguisher"
+			"attach_to_hands"			"1"
+			"used_by_classes"
+			{
+				"pyro"					"1"
+			}
+			"attributes"
+			{
+				"strange restriction type 1"
+				{
+					"attribute_class"	"provide_on_active"
+					"value" 			"1"
+				}
+				"crit vs burning players"
+				{
+					"attribute_class"	"or_crit_vs_playercond"
+					"value" 			"1"
+				}
+				"extinguish target explain"
+				{
+					"attribute_class"	"mult_wpn_burntime"
+					"value" 			"-1"
+				}
+				"damage penalty"
+				{
+					"attribute_class"	"DISPLAY"
+					"value" 			"0.5"
+				}
+				//"mod melee crit swing custom damage"		//sadly enough, it seems this isn't actually functional- it requires the *swing* to be critical, not the hit itself.
+				//{
+				//	"attribute_class"	"mod_melee_crit_swing_custom_damage"
+				//	"value" 			"35"
+				//}
+				"strange restriction type 1"
+				{
+					"attribute_class"	"set_dmgtype_ignite"
+					"value"				"1"
+				}
+				
+				
+				"pyro axe damage bonus"
+				{
+					"attribute_class"	"mult_dmg"
+					"value"				"0.65384615384" // normal value of 1.30769230769, multiplied by 0.5 to match the visual stats
+				}
+				"crit mod disabled"
+				{
+					"attribute_class"	"mult_crit_chance"
+					"value"				"0"
+				}
+			}
+		}
+		"13040"
+		{
+			"name"						"TF_WEAPON_FIREAXE_AXTINGUISHER_ICE"
+			"prefab"					"weapon_fireaxe"
+			"show_in_armory"			"1"
+			"item_slot"					"melee"
+			"anim_slot"					"melee"
+			"item_name"					"Icetinguisher"
+			"item_type_name"			"Ice Axe"
+			"item_description"			"
+'Ice to meat you.'"
+			"item_logname"				"icetinguisher"
+			"item_iconname"				"icetinguisher"
+			"attach_to_hands"			"1"
+			"used_by_classes"
+			{
+				"pyro"					"1"
+			}
+			"attributes"
+			{
+				"strange restriction type 1"
+				{
+					"attribute_class"	"provide_on_active"
+					"value" 			"1"
+				}
+				"heal on hit vs burning"
+				{
+					"attribute_class"	"add_onhit_addhealth_vs_burning"
+					"value" 			"100"
+				}
+				"extinguish target explain"
+				{
+					"attribute_class"	"mult_wpn_burntime"
+					"value" 			"-1"
+				}
+				"fire rate penalty"
+				{
+					"attribute_class"	"mult_postfiredelay"
+					"value" 			"1.3"
+				}
+				"strange restriction type 1"
+				{
+					"attribute_class"	"set_dmgtype_ignite"
+					"value"				"1"
+				}
+				
+				
+				"pyro axe damage bonus"
+				{
+					"attribute_class"	"mult_dmg"
+					"value"				"1.30769230769"
+				}
+				"crit mod disabled"
+				{
+					"attribute_class"	"mult_crit_chance"
+					"value"				"0"
+				}
 			}
 		}
 	}
@@ -2843,7 +3232,7 @@ and boosts firing speed"
 			"armory_Desc"	"on_hit"
 			"stored_as_integer"	"0"
 		}
-		"130010"
+		"13010"
 		{
 			"name"					"does not function as a wrench"
 			"attribute_class"		"mod_building_upgrade_full_metal_only"
@@ -2903,7 +3292,7 @@ and boosts firing speed"
 			"effect_type"	"neutral"
 			"stored_as_integer"	"0"
 		}
-		"130016"
+		"13016"
 		{
 			"name"	"speed on hit"
 			"attribute_class"	"add_onhit_addcond_self_weapon"
@@ -2912,7 +3301,7 @@ and boosts firing speed"
 			"hidden"	"0"
 			"effect_type"	"positive"
 		}
-		"130017"
+		"13017"
 		{
 			"name"	"decreased jump height"
 			"attribute_class"	"mod_jump_height"
@@ -2922,7 +3311,7 @@ and boosts firing speed"
 			"effect_type"	"negative"
 			"stored_as_integer"	"0"
 		}
-		"130018"
+		"13018"
 		{
 			"name"	"second shot crit explain"
 			"attribute_class"	"mod_jump_height"
@@ -2932,16 +3321,16 @@ and boosts firing speed"
 			"effect_type"	"positive"
 			"stored_as_integer"	"0"
 		}
-		"130019"
+		"13019"
 		{
 			"name"	"mark self on kill"
 			"attribute_class"	"add_onkill_addcond_self"
 			"description_string"	"On kill: Mark self for death for %s1 seconds"
 			"description_format"	"value_is_additive"
 			"hidden"	"0"
-			"effect_type"	"neutral"
+			"effect_type"	"negative"
 		}
-		"130020"
+		"13020"
 		{
 			"name"	"explosive bullets delay"
 			"attribute_class"	"mod_explosive_bullet_delay_time"
@@ -2950,7 +3339,7 @@ and boosts firing speed"
 			"hidden"	"0"
 			"effect_type"	"positive"
 		}
-		"130021"
+		"13021"
 		{
 			"name"	"explosive shells with limited range"
 			"attribute_class"	"explosive_bullets"
@@ -2960,7 +3349,7 @@ and boosts firing speed"
 			"effect_type"	"neutral"
 			"stored_as_integer"	"0"
 		}
-		"30022"
+		"13022"
 		{
 			"name"	"gauntlets have knockback"
 			"attribute_class"	"set_scattergun_has_knockback"
@@ -2970,7 +3359,7 @@ and boosts firing speed"
 			"effect_type"	"positive"
 			"stored_as_integer"	"0"
 		}
-		"30023"
+		"13023"
 		{
 			"name"	"headshot minicrit"
 			"attribute_class"	"can_headshot"
@@ -2980,7 +3369,7 @@ and boosts firing speed"
 			"effect_type"	"positive"
 			"stored_as_integer"	"1"
 		}
-		"30024"
+		"13024"
 		{
 			"name"	"sniper no scope"
 			"attribute_class"	"can_headshot"
@@ -2990,7 +3379,7 @@ and boosts firing speed"
 			"effect_type"	"negative"
 			"stored_as_integer"	"1"
 		}
-		"30025"
+		"13025"
 		{
 			"name"	"headshots without scope"
 			"attribute_class"	"can_headshot"
@@ -3000,7 +3389,7 @@ and boosts firing speed"
 			"effect_type"	"positive"
 			"stored_as_integer"	"1"
 		}
-		"30026"
+		"13026"
 		{
 			"name"	"crits have falloff"
 			"attribute_class"	"crit_dmg_falloff"
@@ -3010,7 +3399,7 @@ and boosts firing speed"
 			"effect_type"	"negative"
 			"stored_as_integer"	"0"
 		}
-		"30027"
+		"13027"
 		{
 			"name"	"health kit overheal is only when below full health"
 			"attribute_class"	"health_kits_can_overheal_active"
@@ -3020,7 +3409,7 @@ and boosts firing speed"
 			"effect_type"	"positive"
 			"stored_as_integer"	"1"
 		}
-		"30028"
+		"13028"
 		{
 			"name"	"health kit overheal is only when active"
 			"attribute_class"	"health_kits_can_overheal_active"
@@ -3030,7 +3419,7 @@ and boosts firing speed"
 			"effect_type"	"negative"
 			"stored_as_integer"	"1"
 		}
-		"30029" 
+		"13029" 
 		{
 			"name"					"gaelic rework text"
 			"description_string"	"Charging will allow you to fire up to 4 times in quick succession"
@@ -3038,7 +3427,7 @@ and boosts firing speed"
 			"description_format"	"value_is_additive"
 			"effect_type"			"positive"
 		}
-		"30030"
+		"13030"
 		{
 			"name"	"incendiary buckshot"
 			"attribute_class"	"set_dmgtype_ignite"
@@ -3048,7 +3437,7 @@ and boosts firing speed"
 			"effect_type"	"neutral"
 			"stored_as_integer"	"1"
 		}
-		"30031"
+		"13031"
 		{
 			"name"	"fire rate penalty with reduced health"
 			"attribute_class"	"mult_postfiredelay_with_reduced_health"
@@ -3056,6 +3445,26 @@ and boosts firing speed"
 			"description_format"	"value_is_inverted_percentage"
 			"hidden"	"0"
 			"effect_type"	"negative"
+		}
+		"13032"
+		{
+			"name"	"minicrit from behind"
+			"attribute_class"	"crit_from_behind"
+			"description_string"	"Always mini-crit from behind"
+			"description_format"	"value_is_additive"
+			"hidden"	"0"
+			"effect_type"	"positive"
+			"stored_as_integer"	"0"
+		}		
+		"13033"
+		{
+			"name"	"extinguish target explain"
+			"attribute_class"	"mod_jump_height"
+			"description_string"	"Extinguishes burning targets"
+			"description_format"	"value_is_percentage"
+			"hidden"	"0"
+			"effect_type"	"negative"
+			"stored_as_integer"	"0"
 		}
 		
 		// project ares buffs/nerfs to basegame weapons
@@ -3067,16 +3476,6 @@ and boosts firing speed"
 			"description_string"	"All pyro melees have a bonus 20 base damage"
 			"description_format"	"value_is_percentage"
 			"hidden"	"1"
-			"effect_type"	"neutral"
-			"stored_as_integer"	"0"
-		}
-		"15001"
-		{
-			"name"					"pyro axe damage bonus explain"
-			"attribute_class"	"mult_dmg"
-			"description_string"	"All pyro melees have a bonus 20 base damage"
-			"description_format"	"value_is_percentage"
-			"hidden"	"0"
 			"effect_type"	"neutral"
 			"stored_as_integer"	"0"
 		}
