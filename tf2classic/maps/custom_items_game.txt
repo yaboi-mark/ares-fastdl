@@ -1413,6 +1413,16 @@ Weapon - 'Mommyplier!'"
 					"attribute_class"	"mult_spread_scale"
 					"value"				"0.7"
 				}
+			    "slug description"
+				{
+					"attribute_class"	"mult_bullets_per_shot"
+					"value"				"0.1" 
+				}
+				"weapon_stattrak_module_scale"
+				{
+					"attribute_class"	"mult_dmg"
+					"value"				"10"
+				}
 				//"damage bonus"		//these didn't seem to do well in bot testing so i've disabled them, but they're still here just in case they prove to be the right decision all along
 				//{
 				//	"attribute_class"	"dmmuy"
