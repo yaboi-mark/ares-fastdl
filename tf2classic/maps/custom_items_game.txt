@@ -48,26 +48,26 @@
 			"attach_to_hands"			"2"
 			"attributes"
 			{
-				"pyro axe damage bonus"
-				{
-					"attribute_class"	"weapon_enemy_knockback_mod"
-					"value"				"1.5"
-				}
-				"pyro axe damage bonus"
-				{
-					"attribute_class"	"mult_single_wep_deploy_time"
-					"value"				"0.5"
-				}
-				"pyro axe damage bonus"
-				{
-					"attribute_class"	"mult_dmg"
-					"value"				"1.14285714286"
-				}
-				"crit mod disabled"
-				{
-					"attribute_class"	"mult_crit_chance"
-					"value"				"0"
-				}
+				//"pyro axe damage bonus"
+				//{
+				//	"attribute_class"	"weapon_enemy_knockback_mod"
+				//	"value"				"1.5"
+				//}
+				//"pyro axe damage bonus"
+				//{
+				//	"attribute_class"	"mult_single_wep_deploy_time"
+				//	"value"				"0.5"
+				//}
+				//"pyro axe damage bonus"
+				//{
+				//	"attribute_class"	"mult_dmg"
+				//	"value"				"1.14285714286"
+				//}
+				//"crit mod disabled"
+				//{
+				//	"attribute_class"	"mult_crit_chance"
+				//	"value"				"0"
+				//}
 				"mod melee crit swing custom damage"
 				{
 					"attribute_class"	"mod_melee_crit_swing_custom_damage"
@@ -87,16 +87,16 @@
 			"attach_to_hands"			"2"
 			"attributes"
 			{
-				"pyro axe damage bonus"
-				{
-					"attribute_class"	"mult_dmg"
-					"value"				"1.30769230769"
-				}
-				"crit mod disabled"
-				{
-					"attribute_class"	"mult_crit_chance"
-					"value"				"0"
-				}
+				//"pyro axe damage bonus"
+				//{
+				//	"attribute_class"	"mult_dmg"
+				//	"value"				"1.30769230769"
+				//}
+				//"crit mod disabled"
+				//{
+				//	"attribute_class"	"mult_crit_chance"
+				//	"value"				"0"
+				//}
 			}
 		}
 		
@@ -111,16 +111,16 @@
 			"attach_to_hands"			"2"
 			"attributes"
 			{
-				"pyro axe damage bonus"
-				{
-					"attribute_class"	"mult_dmg"
-					"value"				"1.30769230769"
-				}
-				"crit mod disabled"
-				{
-					"attribute_class"	"mult_crit_chance"
-					"value"				"0"
-				}
+				//"pyro axe damage bonus"
+				//{
+				//	"attribute_class"	"mult_dmg"
+				//	"value"				"1.30769230769"
+				//}
+				//"crit mod disabled"
+				//{
+				//	"attribute_class"	"mult_crit_chance"
+				//	"value"				"0"
+				//}
 			}
 		}
 		
@@ -152,7 +152,7 @@
 				"melee range multiplier crit"			"1.25"
 				"beacon dont heal crit full"			"1"
 				
-				"pyro axe damage bonus"					"1.30769230769"
+				//"pyro axe damage bonus"					"1.30769230769"
 			}
 			"attributes"
 			{
@@ -297,11 +297,11 @@
 				}
 				
 				
-				"pyro axe damage bonus"
-				{
-					"attribute_class"	"mult_dmg"
-					"value"				"1.30769230769"
-				}
+				//"pyro axe damage bonus"
+				//{
+				//	"attribute_class"	"mult_dmg"
+				//	"value"				"1.30769230769"
+				//}
 				//"crit mod disabled"	//anchor already has this!
 				//{
 				//	"attribute_class"	"mult_crit_chance"
@@ -400,9 +400,9 @@
 				}
 			}
 		}
-		"13002"
+		"13002"	//plans are to move this partially into the drive by (currently named nuclear cannon internally, very unfinished)
 		{
-			"name"						"TF_WEAPON_MINIGUN_TOMISLAV"
+			"name"						"TF_WEAPON_MINIGUN_TOMISLAV_CANCELED"
 			"prefab"					"weapon_minigun"
 			"baseitem"					"1"
 			"item_description"			"#TF_Weapon_Minigun_Desc"
@@ -414,7 +414,7 @@
 			{
 				"heavy"					"1"
 			}
-			"show_in_armory"			"1"
+			"show_in_armory"			"0"
 			"attributes"
 			{
 				"minigun spinup time decreased"
@@ -439,7 +439,7 @@
 				}
 			}
 		}
-		"13003"
+		"13003"	//i'm iffy on this one.
 		{
 			"name"						"TF_WEAPON_FLARE_DETONATOR"
 			"prefab"					"valve weapon_flaregun"
@@ -539,9 +539,9 @@
 				}
 			}
 		}
-		"13004"
+		"13004"	// replaced in favor of the noscope
 		{
-			"name"						"The Classic"
+			"name"						"TF_WEAPON_SNIPERRIFLE_CLASSIC_CANCELED"
 			"prefab"					"weapon_sniperrifle"
 			"show_in_armory"			"0"
 			"item_class"				"tf_weapon_compound_bow"
@@ -596,7 +596,7 @@
 
 			}
 		}
-		"13005"
+		"13005"	// i have no idea if we should keep this.
 		{
 			"name"						"TF_WEAPON_THROWINGKNIFE"
 			"prefab"					"weapon_knife"
@@ -794,7 +794,7 @@
 					"attribute_class"	"mod_tranq_onhit"
 					"value" 			"2"
 				}	
-				"mod use custom ammo type" // goal of this was to quietly support successful hit-and-runs. i sadly don't have a way to disable ammo from dispensers, but hopefully noone notices. also, i can't figure out how to get secondary ammo from dropped weapons to work in a scenario where secondary ammo from ammo packs doesn't, but this isn't harmful in it's current state, so it's not harmful to keep.
+				"mod use custom ammo type" // goal of this was to quietly support successful hit-and-runs via dropped weapons. i sadly don't have a way to disable ammo from dispensers, but hopefully noone notices. also, i can't figure out how to get secondary ammo from dropped weapons to work in a scenario where secondary ammo from ammo packs doesn't, but this isn't harmful in it's current state, so it's not harmful to keep.
 				{
 					"attribute_class"	"mod_use_custom_ammo_type"
 					"value" 			"2"
@@ -882,9 +882,9 @@ Weapon - 'Mommyplier!'"
 				"tracer_effect"         "bullet_hunting_revolver_tracer01"
 			}
 		}
-		"13009"
+		"13009"	//i'm gonna need to spend a lot of time getting a minisentry wrench to work, most notably plugin side.
 		{
-			"name"						"TF_WEAPON_WRENCH_MINISENTRY_CANCELED"
+			"name"						"TF_WEAPON_WRENCH_MINISENTRY"
 			"prefab"					"weapon_wrench"
 			"item_description"			"#TF_Weapon_Wrench_Desc"
 			"image_inventory"			"backpack/weapons/w_models/w_masterkey_new"
@@ -974,15 +974,19 @@ Weapon - Mommyplier!"
 				}
 			}
 		}
-		"13011"
-		{
+		"13011"	//mm yum barbeque yum yum :yum: yum
+		{		//partially stolen from kocw
 			"name"						"TF_WEAPON_BARBEQUE"
 			"prefab"					"weapon_pistol"
 			"show_in_armory"			"1"
 			"item_class"				"tf_weapon_coilgun"
 			"item_type_name"			"#TF_Weapon_Coilgun"
 			"item_name"					"Barbeque Grill"
-			"item_description" 			"#TF_Weapon_Coilgun_Desc"
+			"item_description" 			"Alt-Fire: Charge up a more accurate spread of bolts!
+Overcharging causes an explosion
+
+Credits:
+Weapon - 'Mommyplier!'"
 			"propername"				"1"
 			"item_logname"				"Barbeque Grill"
 			"item_iconname"				"Barbeque Grill"
@@ -1078,15 +1082,17 @@ Weapon - Mommyplier!"
 			"mouse_pressed_sound"		"#ui/item_taser_gun_pickup.wav"
 			"drop_sound"				"#ui/item_light_gun_drop.wav"
 		}
-		"13012"
-		{
+		"13012"	//ehh i prefer pancakes
+		{		//also the assets are stolen from kocw. same with the barbeque grill.
 			"name"						"TF_WEAPON_WAFFLEMAKER"
 			"prefab"					"weapon_pistol"
 			"item_class"				"tf_weapon_sniperrifle"
 			"show_in_armory"			"1"
 			"item_type_name"			"#TF_Weapon_Coilgun"
 			"item_name"					"Wafflemaker"
-			"item_description" 			"#TF_Weapon_Coilgun_Desc"
+			"item_description" 			"
+Credits:
+Weapon - 'Mommyplier!'"
 			"propername"				"1"
 			"item_logname"				"Wafflemaker"
 			"item_iconname"				"Wafflemaker"
@@ -1199,8 +1205,8 @@ Weapon - Mommyplier!"
 			"mouse_pressed_sound"		"#ui/item_taser_gun_pickup.wav"
 			"drop_sound"				"#ui/item_light_gun_drop.wav"
 		}
-		"13013"
-		{
+		"13013"	//i might make a different slug shotgun later, but not now.
+		{		//also, the model did not fit this weapon concept.
 			"name"						"TF_WEAPON_RAIDINGAID_CANCELED"
 			"prefab"					"weapon_shotgun"
 			"item_quality"				"normal"
@@ -1283,7 +1289,9 @@ Weapon - Mommyplier!"
 			"anim_slot"					"melee"
 			"item_name"					"The Crook"
 			"item_type_name"			"Axe"
-			"item_description"			""
+			"item_description"			"
+Credits:
+Weapon - 'Mommyplier!'"
 			"item_logname"				"soldier_switchaxe"
 			"item_iconname"				"soldier_switchaxe"
 			"image_inventory"			"backpack/workshop/weapons/c_models/c_soldieraxe/c_soldieraxe"
@@ -1308,11 +1316,11 @@ Weapon - Mommyplier!"
 				}
 				
 				
-				"pyro axe damage bonus"
-				{
-					"attribute_class"	"mult_dmg"
-					"value"				"1.30769230769"
-				}
+				//"pyro axe damage bonus"
+				//{
+				//	"attribute_class"	"mult_dmg"
+				//	"value"				"1.30769230769"
+				//}
 				"crit mod disabled"
 				{
 					"attribute_class"	"mult_crit_chance"
@@ -1320,7 +1328,7 @@ Weapon - Mommyplier!"
 				}
 			}
 		}
-		"13015"
+		"13015"	//currently pyro just uses soldier's version, because it's less effort to test how it works on both.
 		{
 			"name"						"TF_WEAPON_SWITCHAXE_PYRO"
 			"prefab"					"weapon_fireaxe"
@@ -1329,7 +1337,9 @@ Weapon - Mommyplier!"
 			"anim_slot"					"melee"
 			"item_name"					"The Crook"
 			"item_type_name"			"Axe"
-			"item_description"			""
+			"item_description"			"
+Credits:
+Weapon - 'Mommyplier!'"
 			"item_logname"				"pyro_switchaxe"
 			"item_iconname"				"pyro_switchaxe"
 			"image_inventory"			"backpack/workshop/weapons/c_models/c_soldieraxe/c_soldieraxe"
@@ -1353,11 +1363,11 @@ Weapon - Mommyplier!"
 				}
 				
 				
-				"pyro axe damage bonus"
-				{
-					"attribute_class"	"mult_dmg"
-					"value"				"1.30769230769"
-				}
+				//"pyro axe damage bonus"
+				//{
+				//	"attribute_class"	"mult_dmg"
+				//	"value"				"1.30769230769"
+				//}
 				"crit mod disabled"
 				{
 					"attribute_class"	"mult_crit_chance"
@@ -1380,7 +1390,9 @@ Weapon - Mommyplier!"
 
 			"item_name"					"Steel Commander"
 			"item_type_name"			"Shotgun"
-			"item_description"			""
+			"item_description"			"
+Credits:
+Weapon - 'Mommyplier!'"
 			"item_logname"				"steel_commander"
 			"item_iconname"				"steel_commander"
 			"image_inventory"			"backpack/weapons/c_models/c_steel_shotgun/c_steel_shotgun"
@@ -1406,7 +1418,7 @@ Weapon - Mommyplier!"
 				//	"attribute_class"	"dmmuy"
 				//	"value"				"1.15"
 				//}
-				//"damage bonus hidden"
+				//"damage bonus hidden"	//looking back tho i'm not sure why i ever thought they'd be a good idea
 				//{
 				//	"attribute_class"	"mult_dmg"
 				//	"value"				"1.16666666666666666666666"
@@ -1428,7 +1440,7 @@ Weapon - Mommyplier!"
 				"sound_burst"			"Weapon_JungleShotgun.ShootCrit"
 			}	
 		}
-		"13017"
+		"13017"		//TODO: give this shit more flavor please it desperately needs it
 		{
 			"name"						"TF_WEAPON_RAIDINGAID"
 			"prefab"					"weapon_shotgun"
@@ -1477,7 +1489,7 @@ Weapon - Mommyplier!"
 		}
 		"13018"
 		{
-			"name"						"The Liberty Launcher"
+			"name"						"TF_WEAPON_ROCKETLAUNCHER_LIBERTY"
 			"prefab"					"weapon_rocketlauncher"
 			"show_in_armory"			"1"
 			"item_name"					"Liberty Launcher"
@@ -1503,15 +1515,15 @@ Weapon - Mommyplier!"
 				}
 				"clip size penalty"
 				{
-					"attribute_class"	"mult_clipsize"
+					"attribute_class"	"mult_clipsize"	//tbh its actually pretty fun to use when you just have two shots in the clip. really makes you think about how to use your secondaries well.
 					"value"				"0.5"
 				}
 				"blast splash damage decreased"
 				{
 					"attribute_class"	"mult_explosion_splash_damage"
-					"value"				"0.5"
+					"value"				"0.67"
 				}
-				"weapon_stattrak_module_scale"
+				"weapon_stattrak_module_scale"	//i wasn't kidding when i said a long reload.
 				{
 					"attribute_class"	"mult_reload_time"
 					"value"				"2.5"
@@ -1567,15 +1579,19 @@ Weapon - 'Cock Jamers'"
 				}
 			}
 		}
-		"13020"
+		"13020"	//assets ripped from kocw. honestly a lot of weapons here do that.
 		{
 			"name"						"TF_WEAPON_SSG"
 			"prefab"					"weapon_rocketlauncher"
 			"item_class"				"tf_weapon_shotgun_primary"
 			"show_in_armory"			"1"
-			"item_name"					"Doom Twobes"
+			"item_name"					"Close Encounter"
 			"anim_slot"					"secondary"
-			"item_description"			""
+			"item_description"			"
+'Prepare to meet my DOOM tubes!
+
+Credits:
+Weapon - 'Mommyplier!'"
 			"propername"				"1"
 			"item_logname"				"doomshotgun"
 			"item_iconname"				"doomshotgun"
@@ -1632,7 +1648,7 @@ Weapon - 'Cock Jamers'"
 					"attribute_class"	"mod_custom_rampup"
 					"value"				"1"
 				}
-				"add condition on hit"		// oh, fuck, accidentally used the "on wearer" version. whatever, let's see how it turns out.
+				"add condition on hit"		// oh, fuck, accidentally used the "on wearer" version. i mean i'm not objected to seeing how it plays in testing.
 				{
 					"attribute_class"	"add_onhit_addcond"
 					"value"				"16 0.5"
@@ -1695,7 +1711,9 @@ Weapon - 'Cock Jamers'"
 			"name"						"TF_WEAPON_BAT_GETTHEFUCKOUT"
 			"prefab"					"weapon_bat"
 			"show_in_armory"			"1"
-			"item_description"			"#TF_Weapon_Bat_Desc"
+			"item_description"			"
+Credits:
+Weapon - 'Mommyplier!'"
 			"model_world"				"models/weapons/w_models/w_bat.mdl"
 			"model_player"				"models/weapons/v_models/v_bat_scout.mdl"
 			"attach_to_hands"			"2"
@@ -1762,7 +1780,8 @@ Teammates cannot attack while invisibility fades
 
 Credits:
 Model - 'ElTamales, Petachepas'
-Animations - 'Kylul'"
+Animations - 'Kylul'
+Weapon - 'Mommyplier!'"
 			"image_inventory_size_w"		"128"
 			"image_inventory_size_h"		"104"
 			"item_logname"					"Crooked Cleaver"
@@ -1786,7 +1805,12 @@ Animations - 'Kylul'"
 				"civ boost cond override"													
 				{
 					"attribute_class"	"add_civ_boost_override"
-					"value"				"64 1.5"					//i'd be totally down to decrease the time multiplier. i just found that it felt too short to do much with.
+					"value"				"64 2"					//i'd be totally down to decrease the time multiplier. i just found that it felt too short to do much with in testing.
+				}
+				"strange restriction type 1"	//to make up for the longer duration
+				{
+					"attribute_class"	"umbrella_recharge_rate"
+					"value"				"1.3"
 				}
 			}
 			"visuals"
@@ -1807,7 +1831,9 @@ Animations - 'Kylul'"
 
 			"item_name"					"The Shell Shocker"
 			"item_type_name"			"Shotgun"
-			"item_description"			""
+			"item_description"			"
+Credits:
+Weapon - 'Mommyplier!'"
 			"item_logname"				"raiding_aid"
 			"item_iconname"				"raiding_aid"
 			"image_inventory"			"backpack/trenchgun/w_trenchgun"
@@ -1825,7 +1851,7 @@ Animations - 'Kylul'"
 				"explosive bullets delay"
 				{
 					"attribute_class"	"mod_explosive_bullet_delay_time"
-					"value"				"0.45"
+					"value"				"0.45"	//oops i lied!!! uhh this is only because of a bug that happens if you hold fire and your bullets don't hit a surface.
 				}
 				"strange restriction type 1"
 				{
@@ -1867,11 +1893,6 @@ Animations - 'Kylul'"
 					"attribute_class"	"mult_projectile_range"
 					"value"				"0.1"
 				}				
-				"weapon_stattrak_module_scale"
-				{
-					"attribute_class"	"mult_dmgself_push_force"
-					"value" 			"1.5"
-				}	
 				"weapon_stattrak_module_scale"												
 				{
 					"attribute_class"	"blast_dmg_to_self"
@@ -1898,7 +1919,9 @@ Animations - 'Kylul'"
 			"model_player"				"models/weapons/v_models/v_pistol_scout.mdl"
 			"item_type_name"			"Burst Pistol"
 			"item_name"					"Burster"
-			"item_description" 			""
+			"item_description" 			"
+Credits:
+Weapon - 'Mommyplier!'"
 			"attach_to_hands"			"2"
 			"used_by_classes"
 			{
@@ -1939,7 +1962,7 @@ Animations - 'Kylul'"
 				}
 			}
 		}
-		"13025"
+		"13025"	//plans to rework into drive by.
 		{
 			"name"						"TF_WEAPON_MINIGUN_RADIATION"
 			"prefab"					"weapon_aagun"
@@ -1948,7 +1971,7 @@ Animations - 'Kylul'"
 			{
 				"heavy"					"1"
 			}
-			"show_in_armory"			"1"
+			"show_in_armory"			"0"
 			"item_logname"				"nukecannon"
 			"item_iconname"				"nuclear_cannon"
 			"image_inventory"			"backpack/weapons/w_models/w_aagun"
@@ -2033,7 +2056,9 @@ Animations - 'Kylul'"
 			"name"						"TF_WEAPON_FISTS_EVICTION"
 			"prefab"					"weapon_fists"
 			"show_in_armory"					"1"
-			"item_description"			"#TF_Weapon_Fists_Desc"
+			"item_description"			"
+Credits:
+Weapon - 'Mommyplier!'"
 			"model_player"				"models/weapons/v_models/v_fist_heavy.mdl"
 			"attach_to_hands"			"2"
 			"attributes"
@@ -2070,7 +2095,9 @@ Animations - 'Kylul'"
 			"name"						"TF_WEAPON_FISTS_KNOCKBACK"
 			"prefab"					"weapon_fists"
 			"show_in_armory"					"1"
-			"item_description"			"#TF_Weapon_Fists_Desc"
+			"item_description"			"
+Credits:
+Weapon - 'Mommyplier!'"
 			"model_player"				"models/weapons/v_models/v_fist_heavy.mdl"
 			"attach_to_hands"			"2"
 			"attributes"
@@ -2112,6 +2139,7 @@ Animations - 'Kylul'"
 			"name"						"TF_WEAPON_FLAMETHROWER_DRAGON"
 			"prefab"					"weapon_flamethrower"
 			"item_class"				"tf_weapon_rocketlauncher"
+			"item_name"					"Dragon's fury"
 			"attach_to_hands"			"1"
 			"used_by_classes"
 			{
@@ -2221,7 +2249,7 @@ Animations - 'Kylul'"
 			"item_description"			""
 			"item_name"					"Soda Popper"
 			"item_type_name"			"Scattergun"
-			"image_inventory"			"backpack/weapons/c_models/c_fapopper/c_fapopper"
+			"image_inventory"			"backpack/weapons/c_models/c_fapopper/c_fapopper"	//tf?? why did kocw give it this name??
 			"model_world"				"models/weapons/c_models/c_fap/c_fap_scout.mdl"
 			"model_player"				"models/weapons/v_models/v_fap_scout.mdl"
 			"attach_to_hands"			"2"
@@ -2230,7 +2258,7 @@ Animations - 'Kylul'"
 			{
 				"meter_label"                               "HYPE"
 			}
-			"attributes"
+			"attributes"	//TODO holy shit i need to clean up the description
 			{
 				"reload full clip explain"
 				{
@@ -2257,11 +2285,11 @@ Animations - 'Kylul'"
 					"attribute_class"	"DISPLAY"
 					"value"				"0.33"
 				}
-				"mult brimstone slamfire postfiredelay"
-				{
-					"attribute_class"	"mult_brimstone_slamfire_postfiredelay"
-					"value"				"0.66666666667"
-				}
+				//"mult brimstone slamfire postfiredelay"
+				//{
+				//	"attribute_class"	"mult_brimstone_slamfire_postfiredelay"
+				//	"value"				"0.66666666667"
+				//}
 				"mod brimstone slamfire damage required"
 				{
 					"attribute_class"	"mod_brimstone_slamfire_damagerequired"
@@ -2332,9 +2360,11 @@ Animations - 'Kylul'"
 			"show_in_armory"			"1"
 			"item_logname"				"classic"
 			"item_iconname"				"classic"
-			"item_name"					"#TF_Weapon_HunterRifle"
+			"item_name"					"No Scope"
 			"item_type_name"			"#TF_Weapon_SniperRifle"
-			"item_description"			"#TF_Weapon_HunterRifle_Desc"
+			"item_description"			"
+Credits:
+Weapon - 'Mommyplier!'"
 			"image_inventory"			"backpack/weapons/w_models/w_revrifle"
 			"model_world"				"models/weapons/w_models/w_revrifle_sniper.mdl"
 			"model_player"				"models/weapons/v_models/v_revrifle_sniper.mdl"
@@ -2394,7 +2424,10 @@ Animations - 'Kylul'"
 			"prefab"					"weapon_bat"
 			"show_in_armory"			"1"
 			"item_description"			"
-'Hey, I can see my base from here!'"
+'Hey, I can see my base from here!'
+
+Credits:
+Weapon - 'Cock Jamers'"
 			"item_name"					"Atomizer"
 			"item_type_name"			"Bat"
 			"model_world"				"models/weapons/w_models/w_bat.mdl"
@@ -2446,16 +2479,19 @@ Animations - 'Kylul'"
 				}
 			}
 		}
-		"13032"
+		"13032"	//i might switch the model to the candy cane later.
 		{
 			"name"						"TF_WEAPON_BAT_BASICALLYTHERAZOR"
 			"prefab"					"weapon_bat"
 			"show_in_armory"			"1"
-			"item_description"			""
+			"item_description"			"
+Credits:
+Weapon - 'Mommyplier!'"
 			"image_inventory"			"backpack/weapons/c_models/c_ripper/c_ripper"
 			"model_world"				"models/weapons/c_models/c_ripper/c_ripper.mdl"
 			"model_player"				"models/weapons/c_models/c_ripper/c_ripper.mdl"
-			"item_type_name"			"Bad idea"
+			"item_type_name"			"Bad Idea"
+			"item_name"					"Razorblade"
 			"attach_to_hands"			"1"
 			"attributes"
 			{
@@ -2508,7 +2544,7 @@ Animations - 'Kylul'"
 				}
 			}
 		}
-		"13033"	//i used kocw's gaelic gibbet for a template
+		"13033"	//i used kocw's gaelic gibber for a template
 		{
 			"name"						"TF_WEAPON_STICKYBOMB_BURSTER"
 			"prefab"					"weapon_stickybomb_launcher"
@@ -2516,7 +2552,9 @@ Animations - 'Kylul'"
 			"propername"				"0"
 			"item_name"					"Gaelic Gibber"
 			"item_type_name"			"Pipebomb Launcher"
-			"item_description"			""
+			"item_description"			"
+Credits:
+Weapon - 'Mommyplier!'"
 			"item_logname"				"Gaelic Gibber"
 			"item_iconname"				"Gaelic Gibber"
 			"image_inventory"			"backpack/weapons/c_models/c_heavy_duty_sticky_launcher/c_heavy_duty_sticky_launcher"
@@ -2583,11 +2621,11 @@ Animations - 'Kylul'"
 			"drop_sound"				"#ui/item_heavy_gun_drop.wav"
 		}
 		"13034"	//TODO: pull model from https://github.com/Reagy/TF2Classic-KO-Custom-Weapons/tree/b699f65fe8dbc95ba891b17ec4649c988fbeecd0
-		{
+		{		//also this might not be the best idea, and tbh this is mostly proof of concept than any plans to actually add it
 			"name"						"TF_WEAPON_KNIFE_GUN"
 			"prefab"					"weapon_knife"
 			"item_class"				"tf_weapon_pistol"
-			"show_in_armory"			"1"
+			"show_in_armory"			"0"
 			"item_description"			""
 			"model_world"				"models/weapons/w_models/w_knife.mdl"
 			"model_player"				"models/weapons/v_models/v_knife_spy.mdl"
@@ -2657,7 +2695,10 @@ Animations - 'Kylul'"
 			"prefab"					"weapon_rocketlauncher"
 			"show_in_armory"			"1"
 			"item_name"					"LAW"
-			"item_description"			"Alt-fire (Mouse2): Toggle user control of rockets!"
+			"item_description"			"Alt-fire (Mouse2): Toggle user control of rockets!
+
+Credits:
+Weapon - 'Mommyplier!'"
 			"propername"				"1"
 			"item_logname"				"law"
 			"item_iconname"				"law"
@@ -2707,11 +2748,6 @@ Animations - 'Kylul'"
 					"attribute_class"	"custom_rocket_homing_rate"
 					"value" 			"2"
 				}
-				"strange restriction type 1"
-				{
-					"attribute_class"	"mod_rocket_gravity"
-					"value" 			"-0.2"
-				}
 				"custom falloff"
 				{
 					"attribute_class"	"mod_custom_falloff"
@@ -2728,7 +2764,24 @@ Animations - 'Kylul'"
 				"sound_single_shot"		"Weapon_Law_Launcher.Shoot"
 				"sound_burst"			"Weapon_Law_Launcher.ShootCrit"
 				"sound_special1"        "Weapon_Law_Launcher.Explode"
+			    "explosion_effect"		"coilgun_boom_red"
 			}
+			"visuals_red"
+			{
+				"explosion_effect_crit"	"coilgun_boom_red"
+			}
+			"visuals_blu"
+			{
+				"explosion_effect_crit"	"coilgun_boom_blue"
+			}
+			"visuals_grn"
+			{
+				"explosion_effect_crit"	"coilgun_boom_green"
+			}
+			"visuals_ylw"
+			{
+				"explosion_effect_crit"	"coilgun_boom_yellow"
+			}			
 			"mouse_pressed_sound"		"#ui/item_heavier_gun_pickup.wav"
 			"drop_sound"				"#ui/item_heavier_gun_drop.wav"
 		}
@@ -2737,7 +2790,10 @@ Animations - 'Kylul'"
 			"name"						"TF_WEAPON_FLAMETHROWER_VACUUM"
 			"prefab"					"weapon_flamethrower"
 			"item_description"			"Primary fire repels enemies
-Secondary fire pulls enemies"
+Secondary fire pulls enemies
+
+Credits:
+Weapon - 'Mommyplier!'"
 			"attach_to_hands"			"1"
 			"used_by_classes"
 			{
@@ -2775,10 +2831,16 @@ Secondary fire pulls enemies"
 			"item_class"				"tf_weapon_shotgun_primary"
 			"model_world"				"models/weapons/w_models/w_shotgun.mdl"
 			"model_player"				"models/weapons/v_models/v_shotgun_pyro.mdl"
+			"image_inventory"			"backpack/weapons/w_models/w_shotgun"
 			"attach_to_hands"			"2"
 			"anim_slot"					"secondary"
+			"item_name"					"Firewatch"
+			"item_type_name"			"Incendiary Shotgun"
 			"item_description"			"
-Happy californian birthday party, kid."
+'Happy californian birthday party.'
+
+Credits:
+Weapon - 'Mommyplier!'"	//i'm really iffy on the flavor text of this.
 			"used_by_classes"
 			{
 				"pyro"					"1"
@@ -2798,7 +2860,7 @@ Happy californian birthday party, kid."
 				"hidden primary max ammo bonus"
 				{
 					"attribute_class"	"mult_maxammo_primary"
-					"value"				"0.75"
+					"value"				"0.625"
 				}
 			    "weapon_stattrak_module_scale"
 				{
@@ -2858,12 +2920,18 @@ Happy californian birthday party, kid."
 			"name"						"TF_WEAPON_SHOTGUN_INCENDIARY_BACKBURNER"
 			"prefab"					"weapon_flamethrower"
 			"item_class"				"tf_weapon_shotgun_primary"
-			"model_world"				"models/weapons/w_models/w_shotgun.mdl"
-			"model_player"				"models/weapons/v_models/v_shotgun_pyro.mdl"
+			"image_inventory"			"backpack/weapons/c_models/c_fireshotgun/c_fireshotgun"
+			"model_world"				"models/weapons/w_models/w_spitfire.mdl"
+			"model_player"				"models/weapons/v_models/v_spitfire_pyro.mdl"
 			"attach_to_hands"			"2"
 			"anim_slot"					"secondary"
+			"item_name"					"Backshot"
+			"item_type_name"			"Incendiary Shotgun"
 			"item_description"			"
-Back pains suck, I know."
+'Even the chiropractor can't do anything about these back pains.'
+
+Credits:
+Weapon - 'Mommyplier!'"
 			"used_by_classes"
 			{
 				"pyro"					"1"
@@ -2899,7 +2967,7 @@ Back pains suck, I know."
 				"hidden primary max ammo bonus"
 				{
 					"attribute_class"	"mult_maxammo_primary"
-					"value"				"0.75"
+					"value"				"0.625"
 				}
 			    "weapon_stattrak_module_scale"
 				{
@@ -3433,7 +3501,7 @@ and boosts firing speed"
 			"attribute_class"	"set_dmgtype_ignite"
 			"description_string"	"Fires a clip of powerful incendiary buckshot"
 			"description_format"	"value_is_additive"
-			"hidden"	"0"
+			"hidden"	"1"	//this is hidden because it states information that you can attain from the item type of the weapon, labeled as "incendiary shotgun"
 			"effect_type"	"neutral"
 			"stored_as_integer"	"1"
 		}
