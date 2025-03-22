@@ -1131,7 +1131,7 @@ Weapon - 'Mommyplier!'"
 				"weapon_stattrak_module_scale"
 				{
 					"attribute_class"	"mult_dmg"
-					"value"				"0.2"
+					"value"				"0.05"
 				}
 				"weapon_stattrak_module_scale"
 				{
@@ -2278,18 +2278,18 @@ Weapon - 'Mommyplier!'"
 				"fire rate bonus"
 				{
 					"attribute_class"	"mult_postfiredelay"
-					"value"				"0.5"
+					"value"				"0.65"
 				}
 				"clip size penalty"
 				{
 					"attribute_class"	"DISPLAY"
 					"value"				"0.33"
 				}
-				//"mult brimstone slamfire postfiredelay"
-				//{
-				//	"attribute_class"	"mult_brimstone_slamfire_postfiredelay"
-				//	"value"				"0.66666666667"
-				//}
+				"mult brimstone slamfire postfiredelay"
+				{
+					"attribute_class"	"mult_brimstone_slamfire_postfiredelay"
+					"value"				"1.33333333333"
+				}
 				"mod brimstone slamfire damage required"
 				{
 					"attribute_class"	"mod_brimstone_slamfire_damagerequired"
