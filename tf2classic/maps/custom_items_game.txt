@@ -404,7 +404,6 @@
 		{
 			"name"						"TF_WEAPON_MINIGUN_TOMISLAV_CANCELED"
 			"prefab"					"weapon_minigun"
-			"baseitem"					"1"
 			"item_description"			"#TF_Weapon_Minigun_Desc"
 			"image_inventory"			"backpack/workshop/weapons/c_models/c_tomislav/c_tomislav"
 			"model_world"				"models/weapons/w_models/w_tomislav.mdl"
@@ -1013,17 +1012,12 @@ Weapon - 'Mommyplier!'"
 				"weapon_stattrak_module_scale"
 				{
 					"attribute_class"	"mult_dmg"
-					"value"				"0.000238095238"
+					"value"				"0.00047619047"
 				}
 				"weapon_stattrak_module_scale"
 				{
 					"attribute_class"	"mult_bullets_per_shot"
 					"value"				"16"
-				}
-				"weapon_stattrak_module_scale"
-				{
-					"attribute_class"	"mult_dmg"
-					"value"				"0.00119047619"
 				}
 				"weapon_stattrak_module_scale"
 				{
@@ -1058,13 +1052,13 @@ Weapon - 'Mommyplier!'"
 				"damage falls off to zero"
 				{
 					"attribute_class"	"mult_falloff_distance"
-					"value"				"2"
+					"value"				"1"
 				}
-				"weapon_stattrak_module_scale"
+                "weapon_stattrak_module_scale"
 				{
-					"attribute_class"	"mult_dmgself_push_force"
-					"value" 			"0.3"
-				}	
+					"attribute_class"	"mult_projectile_range"
+					"value"				"0.125"	//distance before rampup turns into falloff, including the falloff multiplier above
+				}
 			}
 			"visuals"
 			{
@@ -1086,7 +1080,6 @@ Weapon - 'Mommyplier!'"
 		{		//also the assets are stolen from kocw. same with the barbeque grill.
 			"name"						"TF_WEAPON_WAFFLEMAKER"
 			"prefab"					"weapon_pistol"
-			"item_class"				"tf_weapon_sniperrifle"
 			"show_in_armory"			"1"
 			"item_type_name"			"#TF_Weapon_Coilgun"
 			"item_name"					"Wafflemaker"
@@ -1113,50 +1106,35 @@ Weapon - 'Mommyplier!'"
 			}		
 			"attributes"
 			{
+				"no ammo lost on hit"
+				{
+					"attribute_class"	"mod_use_custom_ammo_type"
+					"value"				"3"
+				}
 				"mod use metal ammo type"
 				{
 					"attribute_class"	"ragdolls_become_ash"
 					"value"				"1"
 				}
-				"strange restriction type 1"
-				{
-					"attribute_class"	"unimplemented_mod_sniper_no_charge"
-					"value"				"1"														
-				}
-				"mod use custom ammo type"
-				{
-					"attribute_class"	"mod_use_custom_ammo_type"
-					"value"				"3"
-				}
 				"weapon_stattrak_module_scale"
 				{
 					"attribute_class"	"mult_dmg"
-					"value"				"0.05"
+					"value"				"0.13333333333"
 				}
 				"weapon_stattrak_module_scale"
 				{
 					"attribute_class"	"mult_postfiredelay"
-					"value"				"0"
+					"value"				"0.16"
 				}
-				"weapon_stattrak_module_scale"
+				"mod use custom ammo type"
 				{
-					"attribute_class"	"mult_postfiredelay_scoped"
-					"value"				"0.01"
-				}
-				"weapon_stattrak_module_scale"
-				{
-					"attribute_class"	"mult_player_aiming_movespeed"
-					"value"				"3.75"
-				}
-				"weapon_stattrak_module_scale"
-				{
-					"attribute_class"	"mult_maxammo_metal"
-					"value" 			"8"
+					"attribute_class"	"mod_ammo_per_shot"
+					"value"				"2"
 				}
 				"mod use custom ammo type"
 				{
 					"attribute_class"	"add_ammo_on_hit"
-					"value"				"1"
+					"value"				"2"
 				}
 				"limited range DISPLAY ONLY"
 				{
@@ -1168,10 +1146,15 @@ Weapon - 'Mommyplier!'"
 					"attribute_class"	"mult_projectile_range"
 					"value"				"0.1"
 				}				
-				"strange restriction type 1"
+                "weapon_stattrak_module_scale"
 				{
 					"attribute_class"	"mult_spread_scale"
-					"value"				"0.02"
+					"value"				"0.2"
+				}
+				"mod max primary clip override"
+				{
+					"attribute_class"	"mod_max_primary_clip_override"
+					"value"				"-1"
 				}
 			}
 			"visuals"
@@ -3155,6 +3138,214 @@ Weapon - 'Mommyplier!'"
 				}
 			}
 		}
+		"13041"	//TODO get this working when i set up a server
+		{
+            "name"						"TF_WEAPON_PDA_BISEXUAL"
+            "prefab"					"weapon_pda"
+			"tags"
+			{
+				"bots_cant_use"			"1"
+			}
+            "show_in_armory"			"1"
+
+            "item_name"					"PDA: Globetrotter"
+			"item_description"			"
+'"
+			"item_type_name"			"#TF_Weapon_PDA_Engineer_Builder"
+			"image_inventory"			"backpack/weapons/w_models/w_jumppad"
+			"model_world"				"models/weapons/w_models/w_builder.mdl"
+			"model_player"				"models/weapons/v_models/v_builder_engineer.mdl"
+			"attach_to_hands"			"2"
+			"used_by_classes"
+			{
+				"engineer"				"1"
+			}
+            "attributes"
+            {
+                //"bidirectional teleport"	//this is technically possible as stated by the NOWP attribute listing, but it's not through this attribute, so this whole weapon is shelved for now
+                //{
+                //    "attribute_class"	"bidirectional_teleport"
+                //    "value"				"1"
+                //}
+				"mult teleporter cost bonus"
+				{
+					"attribute_class"	"mod_teleporter_cost"
+					"value"				"0.3"
+				}
+				"dispenser rate penalty"
+				{
+					"attribute_class"	"mult_dispenser_rate"
+					"value"				"0.5"
+				}
+				"allowed in medieval mode"
+				{
+					"attribute_class"	"allowed_in_medieval_mode"
+					"value"				"1"
+				}
+            }
+			"mouse_pressed_sound"		"#ui/item_metal_weapon_pickup.wav"
+			"drop_sound"				"#ui/item_metal_weapon_drop.wav"
+		}
+		"13042"
+		{
+            "name"						"TF_WEAPON_PDA_RANGER"
+            "prefab"					"weapon_pda"
+			"tags"
+			{
+				"bots_cant_use"			"1"
+			}
+            "show_in_armory"			"1"
+
+            "item_name"					"PDA: Texan Ranger"
+			"item_description"			"
+'"
+			"item_type_name"			"#TF_Weapon_PDA_Engineer_Builder"
+			"image_inventory"			"backpack/weapons/w_models/w_jumppad"
+			"model_world"				"models/weapons/w_models/w_builder.mdl"
+			"model_player"				"models/weapons/v_models/v_builder_engineer.mdl"
+			"attach_to_hands"			"2"
+			"used_by_classes"
+			{
+				"engineer"				"1"
+			}
+            "attributes"
+            {
+				"dispenser rate bonus"
+				{
+					"attribute_class"	"mult_dispenser_rate"
+					"value"				"3"
+				}
+				"engy dispenser radius increased"
+				{
+					"attribute_class"	"mult_dispenser_radius"
+					"value"				"5"
+				}
+				"engy sentry fire rate decreased"
+				{
+					"attribute_class"	"mult_sentry_firerate"
+					"value"				"0.3"
+				}
+				"allowed in medieval mode"
+				{
+					"attribute_class"	"allowed_in_medieval_mode"
+					"value"				"1"
+				}
+            }
+			"mouse_pressed_sound"		"#ui/item_metal_weapon_pickup.wav"
+			"drop_sound"				"#ui/item_metal_weapon_drop.wav"
+		}
+		"13043"
+		{
+			"name"						"TF_WEAPON_MEDIGUN_RIFLE"
+			"item_class"				"tf_weapon_paintballrifle"
+			"tags"
+			{
+				"bots_cant_use"			"1"
+			}
+            "show_in_armory"			"1"
+			"item_name"					"The Overdose"
+			"item_type_name"			"#TF_Weapon_HealLauncher_Type"
+			"item_description"			"#TF_Weapon_HealLauncher_Desc"
+			"item_logname"				"nader"
+			"item_iconname"				"nader"
+			"item_slot"					"secondary"
+			"anim_slot"					"item1"
+			"model_world"				"models/weapons/w_models/w_nader.mdl"
+			"model_player"				"models/weapons/v_models/v_nader.mdl"
+			"image_inventory"			"backpack/weapons/w_models/w_nader"
+			"extra_wearable" 			"models/player/items/nader_backpack.mdl"
+			"attach_to_hands"			"2"
+			"used_by_classes"
+			{
+				"medic"					"1"
+			}
+			"static_attrs"
+			{
+				"min_viewmodel_offset"		"10 0 -12"
+				"class select override vcd"				"class_select_nader"
+			}
+			"attributes"
+			{
+		
+				"hidden separator"		"1"
+
+				"marked target autoheal duration"
+				{
+					"attribute_class"	"marked_target_autoheal_duration"
+					"value"				"3"
+				}
+				"marked target autoheal rate"
+				{
+					"attribute_class"	"marked_target_autoheal_rate"
+					"value"				"40"
+				}
+				"override projectile type"
+				{
+					"attribute_class"	"override_projectile_type"
+					"value"				"1"
+				}
+				"hitscan hits allies"
+				{
+					"attribute_class"	"hitscan_hits_allies"
+					"value"				"1"
+				}
+				"no ammo hidden" 
+				{
+					"attribute_class"	"energy_weapon_no_ammo"
+					"value"				"1"
+				}
+				"scattergun no reload single"
+				{
+					"attribute_class"	"set_scattergun_no_reload_single"	
+					"value"				"1"
+				}
+				"fire rate bonus"
+				{
+					"attribute_class"	"mult_postfiredelay"
+					"value"				"0.3"
+				}
+				"clip size bonus"
+				{
+					"attribute_class"	"mult_clipsize"
+					"value"				"0.67"
+				}
+				"clip size bonus"
+				{
+					"attribute_class"	"mult_dmg"
+					"value"				"0"
+				}
+                "sniper no scope"
+				{
+					"attribute_class"	"unimplemented_mod_sniper_no_charge"
+					"value"				"1"														
+				}
+                "bullet is a hull"
+				{
+					"attribute_class"	"bullet_is_a_hull"
+					"value"				"7.5"														
+				}
+			}
+			"visuals"
+			{
+				"muzzle_flash"			"muzzle_tranq"
+				"sound_reload"			"Weapon_HealLauncher.Charge"
+				"sound_special2"			"Weapon_DoubleShotgun.Single"
+				
+				"player_bodygroups"
+				{
+					"medic_backpack"			"1"
+				}
+
+				"animation_replacement"
+				{
+					"ACT_MP_RELOAD_STAND"				"ACT_MP_RELOAD_STAND_ITEM1"
+					"ACT_MP_RELOAD_CROUCH"				"ACT_MP_RELOAD_CROUCH_ITEM1"
+					"ACT_MP_RELOAD_SWIM"				"ACT_MP_RELOAD_SWIM_ITEM1"
+				}
+			}
+			"mouse_pressed_sound"		"#ui/item_metal_slosh_pickup.wav"
+			"drop_sound"				"#ui/item_metal_weapon_drop.wav"
+		}
 	}
 	
 	"attributes"
@@ -3540,6 +3731,66 @@ and boosts firing speed"
 			"attribute_class"	"mod_jump_height"
 			"description_string"	"Extinguishes burning targets"
 			"description_format"	"value_is_percentage"
+			"hidden"	"0"
+			"effect_type"	"negative"
+			"stored_as_integer"	"0"
+		}
+		"13034"
+		{
+			"name"	"no ammo lost on hit"
+			"attribute_class"	"mod_jump_height"
+			"description_string"	"Does not consume ammo on hit"
+			"description_format"	"value_is_additive"
+			"hidden"	"0"
+			"effect_type"	"positive"
+			"stored_as_integer"	"0"
+		}
+		"13035"
+		{
+			"name"	"mult teleporter cost bonus"
+			"attribute_class"	"mod_teleporter_cost"
+			"description_string"	"Teleporter costs %s1% less"
+			"description_format"	"value_is_percentage"
+			"hidden"	"0"
+			"effect_type"	"positive"
+			"stored_as_integer"	"0"
+		}
+		"13036"
+		{
+			"name"	"engy sentry radius decreased"
+			"attribute_class"	"mult_sentry_range"
+			"description_string"	"%s1% smaller sentry targeting radius"
+			"description_format"	"value_is_percentage"
+			"hidden"	"0"
+			"effect_type"	"negative"
+			"stored_as_integer"	"0"
+		}
+		"13037"
+		{
+			"name"	"dispenser rate penalty"
+			"attribute_class"	"mult_sentry_range"
+			"description_string"	"%s1% less ammo and metal generated by dispensers"
+			"description_format"	"value_is_percentage"
+			"hidden"	"0"
+			"effect_type"	"negative"
+			"stored_as_integer"	"0"
+		}
+		"13037"
+		{
+			"name"	"dispenser rate bonus"
+			"attribute_class"	"mult_sentry_range"
+			"description_string"	"+%s1% more ammo and metal generated by dispensers"
+			"description_format"	"value_is_percentage"
+			"hidden"	"0"
+			"effect_type"	"positive"
+			"stored_as_integer"	"0"
+		}
+		"13038"
+		{
+			"name"	"engy sentry fire rate decreased"
+			"attribute_class"	"mult_sentry_firerate"
+			"description_string"	"-%s1% Sentry firing speed"
+			"description_format"	"value_is_inverted_percentage"
 			"hidden"	"0"
 			"effect_type"	"negative"
 			"stored_as_integer"	"0"
