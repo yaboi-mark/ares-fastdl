@@ -438,9 +438,9 @@
 				}
 			}
 		}
-		"13003"	//i'm iffy on this one.
+		"13003"	//i'm iffy on this one. //removed due to bug
 		{
-			"name"						"TF_WEAPON_FLARE_DETONATOR"
+			"name"						"TF_WEAPON_FLARE_DETONATOR_CANCELLED"
 			"prefab"					"valve weapon_flaregun"
 			"item_class"				"tf_weapon_cyclops"
 			"image_inventory"			"backpack/weapons/w_models/w_pilot_flaregun"
@@ -451,7 +451,7 @@
 			{
 				"pyro"					"1"
 			}
-			"show_in_armory"			"1"
+			"show_in_armory"			"0"
 			"bucket"                    "1"
 			"bucket_position"           "1"
 			"attributes"
@@ -648,9 +648,9 @@
 			"image_inventory"			"backpack/weapons/w_models/w_brick"
 			"item_logname"				"brick"
 			"item_iconname"				"brick"
-			"model_player"				"models/weapons/v_models/v_brick_scout.mdl"
-			"model_world"				"models/weapons/w_models/w_brick_scout.mdl"
-			"attach_to_hands"			"2"
+			"model_player"				"models/weapons/w_models/w_grenade_heal.mdl"
+			"model_world"				"models/weapons/w_models/w_grenade_heal.mdl"
+			"attach_to_hands"			"0"
 			"bucket"                    "1"
 			"bucket_position"           "1"
 			"used_by_classes"
@@ -685,6 +685,11 @@
 					"attribute_class"	"mult_dmg"
 					"value"				"0"
 				}
+				"fuse bonus"
+				{
+					"attribute_class"	"blast_dmg_to_self"
+					"value"				"-0.6"
+				}
 				"projectile speed decreased"
 				{
 					"attribute_class"	"mult_projectile_speed"
@@ -705,7 +710,7 @@
 					"attribute_class"	"grenade_no_spin"
 					"value" 			"1"
 				}	
-				"mod use custom ammo type" // goal of this is to quietly support sitting near dispensers
+				"mod use custom ammo type" // goal of this is to quietly support sitting near dispensers as to be better anchor the scout to teamfights
 				{
 					"attribute_class"	"mod_use_custom_ammo_type"
 					"value" 			"2"
@@ -724,6 +729,11 @@
 				{
 					"attribute_class"	"mult_secondary_ammo_from_dropped_weapons"
 					"value"				"0"
+				}
+				"custom projectile model"
+				{
+					"attribute_class"	"custom_projectile_model"
+					"value"				"models/weapons/w_models/w_grenade_heal.mdl"
 				}
 			}
 			"mouse_pressed_sound"		"#ui/item_pack_pickup.wav"
@@ -1292,6 +1302,11 @@ Weapon - 'Mommyplier!'"
 					"attribute_class"	"mult_deploy_time"
 					"value" 			"0.4"
 				}
+				"mod crit airborne"
+				{
+					"attribute_class"	"crit_airborne"
+					"value"				"1"
+				}
 				"max health additive penalty"
 				{
 					"attribute_class"	"add_maxhealth"
@@ -1338,6 +1353,11 @@ Weapon - 'Mommyplier!'"
 				{
 					"attribute_class"	"mult_deploy_time"
 					"value" 			"0.4"
+				}
+				"mod crit airborne"
+				{
+					"attribute_class"	"crit_airborne"
+					"value"				"1"
 				}
 				"max health additive penalty"
 				{
@@ -1717,6 +1737,11 @@ Weapon - 'Mommyplier!'"
 					"attribute_class"	"heal_on_kill"
 					"value"				"100"
 				}
+				"damage bonus"
+				{
+					"attribute_class"	"mult_dmg"
+					"value"				"1.4"
+				}
 				"mark self on kill"
 				{
 					"attribute_class"	"dmmuy"
@@ -1729,21 +1754,21 @@ Weapon - 'Mommyplier!'"
 				}
 				
 				
-				"pyro axe damage bonus"
-				{
-					"attribute_class"	"weapon_enemy_knockback_mod"
-					"value"				"1.5"
-				}
-				"pyro axe damage bonus"
-				{
-					"attribute_class"	"mult_single_wep_deploy_time"
-					"value"				"0.5"
-				}
-				"pyro axe damage bonus"
-				{
-					"attribute_class"	"mult_dmg"
-					"value"				"1.14285714286"
-				}
+				//"pyro axe damage bonus"
+				//{
+				//	"attribute_class"	"weapon_enemy_knockback_mod"
+				//	"value"				"1.5"
+				//}
+				//"pyro axe damage bonus"
+				//{
+				//	"attribute_class"	"mult_single_wep_deploy_time"
+				//	"value"				"0.5"
+				//}
+				//"pyro axe damage bonus"
+				//{
+				//	"attribute_class"	"mult_dmg"
+				//	"value"				"1.14285714286"
+				//}
 				"crit mod disabled"
 				{
 					"attribute_class"	"mult_crit_chance"
@@ -1937,6 +1962,11 @@ Weapon - 'Mommyplier!'"
 				{
 					"attribute_class"	"mult_spread_scale"
 					"value"				"0.5"
+				}
+			    "damage penalty"
+				{
+					"attribute_class"	"mult_dmg"
+					"value"				"0.85"
 				}
 				"custom bullet impact collision mode"
 				{
@@ -2247,11 +2277,15 @@ Weapon - 'Mommyplier!'"
 			"model_player"				"models/weapons/v_models/v_fap_scout.mdl"
 			"attach_to_hands"			"2"
 			"anim_slot"					"primary"
+			"used_by_classes"
+			{
+				"scout"					"1"
+			}
 			"static_attrs"
 			{
 				"meter_label"                               "HYPE"
 			}
-			"attributes"	//TODO holy shit i need to clean up the description
+			"attributes"	//TODO holy shit i need to clean up the description	//done
 			{
 				"reload full clip explain"
 				{
@@ -2262,11 +2296,6 @@ Weapon - 'Mommyplier!'"
 				{
 					"attribute_class"	"brimstone_display_1"
 					"value"				"1"
-				}
-				"brimstone DISPLAY ONLY 2"
-				{
-					"attribute_class"	"brimstone_display_1"
-					"value"				"2"
 				}
 				"fire rate bonus"
 				{
@@ -2364,6 +2393,11 @@ Weapon - 'Mommyplier!'"
 			"attach_to_hands"			"2"
 			"attributes"
 			{
+				"heal on kill on crit"
+				{
+					"attribute_class"	"heal_on_kill_crit"
+					"value"				"25"
+				} 
 				"max health additive bonus"
 				{
 					"attribute_class"	"add_maxhealth"
@@ -2409,6 +2443,11 @@ Weapon - 'Mommyplier!'"
 					"attribute_class"	"mult_deploy_time"		//felt right to me. i might remove this later.
 					"value"				"0.75"
 				}
+				"fire rate bonus hidden"
+				{
+					"attribute_class"	"mult_dmg"
+					"value"				"0.8"
+				}
 			}
 		}
 		"13031"	//	palindrome!
@@ -2445,21 +2484,21 @@ Weapon - 'Cock Jamers'"
 				}
 				
 				
-				"pyro axe damage bonus"
-				{
-					"attribute_class"	"weapon_enemy_knockback_mod"
-					"value"				"1.5"
-				}
-				"pyro axe damage bonus"
-				{
-					"attribute_class"	"mult_single_wep_deploy_time"
-					"value"				"0.5"
-				}
-				"pyro axe damage bonus"
-				{
-					"attribute_class"	"mult_dmg"
-					"value"				"1.14285714286"
-				}
+				//"pyro axe damage bonus"
+				//{
+				//	"attribute_class"	"weapon_enemy_knockback_mod"
+				//	"value"				"1.5"
+				//}
+				//"pyro axe damage bonus"
+				//{
+				//	"attribute_class"	"mult_single_wep_deploy_time"
+				//	"value"				"0.5"
+				//}
+				//"pyro axe damage bonus"
+				//{
+				//	"attribute_class"	"mult_dmg"
+				//	"value"				"1.14285714286"
+				//}
 				"crit mod disabled"
 				{
 					"attribute_class"	"mult_crit_chance"
@@ -2510,21 +2549,21 @@ Weapon - 'Mommyplier!'"
 				}
 				
 				
-				"pyro axe damage bonus"
-				{
-					"attribute_class"	"weapon_enemy_knockback_mod"
-					"value"				"1.5"
-				}
-				"pyro axe damage bonus"
-				{
-					"attribute_class"	"mult_single_wep_deploy_time"
-					"value"				"0.5"
-				}
-				"pyro axe damage bonus"
-				{
-					"attribute_class"	"mult_dmg"
-					"value"				"1.14285714286"
-				}
+				//"pyro axe damage bonus"
+				//{
+				//	"attribute_class"	"weapon_enemy_knockback_mod"
+				//	"value"				"1.5"
+				//}
+				//"pyro axe damage bonus"
+				//{
+				//	"attribute_class"	"mult_single_wep_deploy_time"
+				//	"value"				"0.5"
+				//}
+				//"pyro axe damage bonus"
+				//{
+				//	"attribute_class"	"mult_dmg"
+				//	"value"				"1.14285714286"
+				//}
 				"crit mod disabled"
 				{
 					"attribute_class"	"mult_crit_chance"
@@ -2582,7 +2621,7 @@ Weapon - 'Mommyplier!'"
 				"weapon_stattrak_module_scale"
 				{
 					"attribute_class"	"mult_burstfiredelay"
-					"value"				"0.35"
+					"value"				"0.3"
 				}
 				"chargeweapon no extra speed"
 				{
@@ -2604,6 +2643,16 @@ Weapon - 'Mommyplier!'"
 					"attribute_class"	"mult_crit_chance"
 					"value"				"0"
 				}
+				"weapon_stattrak_module_scale"
+				{
+					"attribute_class"	"mult_dmgself_push_force"
+					"value"				"0.6"
+				}
+				"blast dmg to self increased hidden"
+				{
+					"attribute_class"	"blast_dmg_to_self"
+					"value"				"0.6"
+				}
 			}
 			"visuals"
 			{
@@ -2613,8 +2662,8 @@ Weapon - 'Mommyplier!'"
 			"mouse_pressed_sound"		"#ui/item_heavy_gun_pickup.wav"
 			"drop_sound"				"#ui/item_heavy_gun_drop.wav"
 		}
-		"13034"	//TODO: pull model from https://github.com/Reagy/TF2Classic-KO-Custom-Weapons/tree/b699f65fe8dbc95ba891b17ec4649c988fbeecd0
-		{		//also this might not be the best idea, and tbh this is mostly proof of concept than any plans to actually add it
+		"13034"	//yea this isn't gonna work in its current state.
+		{
 			"name"						"TF_WEAPON_KNIFE_GUN"
 			"prefab"					"weapon_knife"
 			"item_class"				"tf_weapon_pistol"
@@ -2625,56 +2674,78 @@ Weapon - 'Mommyplier!'"
 			"attach_to_hands"			"2"
 			"bucket"                    "2"
 			"bucket_position"           "2"
+			"item_name"					"Inside Jab"
 			"attributes"
 			{
 				
+				"explosive bullets delay"
+				{
+					"attribute_class"	"mod_explosive_bullet_delay_time"
+					"value"				"0.5"
+				}
+				"keep disguise"
+				{
+					"attribute_class"	"set_keep_disguise"
+					"value"				"1"
+				}
+				"No Fatal Backstab"
+				{
+					"attribute_class"	"DMMUY"
+					"value"				"1"
+				}
+				
 				"hidden separator"		"1"
 				
+				"strange restriction type 1"
+				{
+					"attribute_class"	"explosive_bullets"
+					"value"				"1"
+				}
                 "crit from behind"
 				{
 					"attribute_class"	"crit_from_behind"
 					"value"				"1"
-				}	
-				"clip size penalty"
+				}
+				"mod max primary clip override"
 				{
-					"attribute_class"	"mult_clipsize"
-					"value"				"0.5"
+					"attribute_class"	"mod_max_primary_clip_override"
+					"value"				"-1"
 				}
 				"damage bonus"
 				{
 					"attribute_class"	"mult_dmg"
 					"value"				"2.66666666667"
 				}
+				"damage bonus"
+				{
+					"attribute_class"	"mult_postfiredelay"
+					"value"				"5.33333333333"
+				}
                 "strange restriction type 1"
 				{
 					"attribute_class"	"mod_always_draw_tracer_effect"
 					"value"				"1"
 				}
-				"strange restriction type 1"
+				"custom falloff"
+				{
+					"attribute_class"	"mod_custom_falloff"
+					"value"				"1"
+				}
+				"custom rampup"
 				{
 					"attribute_class"	"mod_custom_rampup"
 					"value"				"1"
 				}
-				"custom falloff"
-				{
-					"attribute_class"	"mod_custom_falloff"
-					"value"				"-0.00001"
-				}
                 "weapon_stattrak_module_scale"
 				{
 					"attribute_class"	"mult_projectile_range"
-					"value"				"0.05859375"
-				}				
-                "crits have falloff"
+					"value"				"0.01171875"
+				}	
+                "no explosion falloff hidden"
 				{
-					"attribute_class"	"crit_dmg_falloff"
+					"attribute_class"	"disable_explosion_falloff"
 					"value"				"1"
-				}				
-				"longer damage falloff distance"
-				{
-					"attribute_class"	"mult_falloff_distance"
-					"value"				"0.1171875"
-				}
+				}	
 			}
 			"visuals"
 			{
@@ -2689,6 +2760,7 @@ Weapon - 'Mommyplier!'"
 			"show_in_armory"			"1"
 			"item_name"					"LAW"
 			"item_description"			"Alt-fire (Mouse2): Toggle user control of rockets!
+This weapon has much stronger falloff and rampup
 
 Credits:
 Weapon - 'Mommyplier!'"
@@ -2701,11 +2773,6 @@ Weapon - 'Mommyplier!'"
 			"attach_to_hands"			"2"
 			"attributes"
 			{
-				"damage bonus"
-				{
-					"attribute_class"	"mult_dmg"
-					"value"				"1.3"
-				}
 				"damage bonus hidden"
 				{
 					"attribute_class"	"blast_dmg_to_self"
@@ -2745,6 +2812,11 @@ Weapon - 'Mommyplier!'"
 				{
 					"attribute_class"	"mod_custom_falloff"
 					"value"				"0.25"	// no long distance damage for you, maggot!
+				}
+				"custom rampup"
+				{
+					"attribute_class"	"mod_custom_rampup"
+					"value"				"1.75"
 				}
 				"weapon enemy knockback mod mult decreased"
 				{
@@ -3052,7 +3124,7 @@ Weapon - 'Mommyplier!'"
 				}
 				"damage penalty"
 				{
-					"attribute_class"	"DISPLAY"
+					"attribute_class"	"mult_dmg"
 					"value" 			"0.5"
 				}
 				//"mod melee crit swing custom damage"		//sadly enough, it seems this isn't actually functional- it requires the *swing* to be critical, not the hit itself.
@@ -3067,11 +3139,11 @@ Weapon - 'Mommyplier!'"
 				}
 				
 				
-				"pyro axe damage bonus"
-				{
-					"attribute_class"	"mult_dmg"
-					"value"				"0.65384615384" // normal value of 1.30769230769, multiplied by 0.5 to match the visual stats
-				}
+				//"pyro axe damage bonus"
+				//{
+				//	"attribute_class"	"mult_dmg"
+				//	"value"				"0.65384615384" // normal value of 1.30769230769, multiplied by 0.5 to match the visual stats
+				//}
 				"crit mod disabled"
 				{
 					"attribute_class"	"mult_crit_chance"
@@ -3126,11 +3198,11 @@ Weapon - 'Mommyplier!'"
 				}
 				
 				
-				"pyro axe damage bonus"
-				{
-					"attribute_class"	"mult_dmg"
-					"value"				"1.30769230769"
-				}
+				//"pyro axe damage bonus"
+				//{
+				//	"attribute_class"	"mult_dmg"
+				//	"value"				"1.30769230769"
+				//}
 				"crit mod disabled"
 				{
 					"attribute_class"	"mult_crit_chance"
@@ -3138,7 +3210,7 @@ Weapon - 'Mommyplier!'"
 				}
 			}
 		}
-		"13041"	//TODO get this working when i set up a server
+		"13041"	//TODO get this working when i set up a linux server
 		{
             "name"						"TF_WEAPON_PDA_BISEXUAL"
             "prefab"					"weapon_pda"
@@ -3277,7 +3349,7 @@ Weapon - 'Mommyplier!'"
 				"marked target autoheal rate"
 				{
 					"attribute_class"	"marked_target_autoheal_rate"
-					"value"				"40"
+					"value"				"30"
 				}
 				"override projectile type"
 				{
@@ -3302,7 +3374,7 @@ Weapon - 'Mommyplier!'"
 				"fire rate bonus"
 				{
 					"attribute_class"	"mult_postfiredelay"
-					"value"				"0.3"
+					"value"				"0.15"
 				}
 				"clip size bonus"
 				{
@@ -3319,10 +3391,15 @@ Weapon - 'Mommyplier!'"
 					"attribute_class"	"unimplemented_mod_sniper_no_charge"
 					"value"				"1"														
 				}
-                "bullet is a hull"
+                "medigun backpack range increased"
 				{
-					"attribute_class"	"bullet_is_a_hull"
-					"value"				"7.5"														
+					"attribute_class"	"mult_backpack_range"
+					"value"				"100"
+				}
+                "weapon_stattrak_module_scale"
+				{
+					"attribute_class"	"mult_projectile_range"
+					"value"				"0.125"
 				}
 			}
 			"visuals"
@@ -3346,6 +3423,816 @@ Weapon - 'Mommyplier!'"
 			"mouse_pressed_sound"		"#ui/item_metal_slosh_pickup.wav"
 			"drop_sound"				"#ui/item_metal_weapon_drop.wav"
 		}
+		"13044"
+		{
+			"name"						"TF_WEAPON_MEDIGUN_DRAIN"
+			"prefab"					"weapon_medigun"
+			"show_in_armory"			"1"
+			"item_name"					"Booster Shot"
+			"item_description"			"#TF_Unique_Achievement_Medigun1_Desc"
+			"propername"				"1"
+			"equip_region"				"medigun_backpack"
+			"image_inventory"			"backpack/weapons/w_models/w_kritzkrieg"
+			"model_world"				"models/weapons/w_models/w_kritzkrieg.mdl"
+			"model_player"				"models/weapons/v_models/v_kritzkrieg_medic.mdl"
+			"extra_wearable" 			"models/player/items/kritzkrieg_backpack.mdl"
+			"attach_to_hands"			"2"
+			"attributes"
+			{
+				"provide on active"
+				{
+					"attribute_class"	"provide_on_active"
+					"value"				"1"
+				}
+				"lunchbox adds minicrits"
+				{
+					"attribute_class"	"set_weapon_mode"
+					"value"				"1"
+				}
+				"medigun charge is push buff"
+				{
+					"attribute_class"	"set_charge_type"
+					"value"				"2"
+				}
+				"special taunt"
+				{
+					"attribute_class"	"special_taunt"
+					"value"				"1"
+				}
+				"heal rate bonus"
+				{
+					"attribute_class"	"mult_medigun_healrate"
+					"value"				"1.8"
+				}
+				"Move Speed Bonus Active"
+				{
+					"attribute_class"	"mult_player_movespeed_active"
+					"value"				"1.3"
+				}
+				"health drain"
+				{
+					"attribute_class"	"add_health_regen"
+					"value"				"-20"
+				}
+			}
+			"visuals"
+			{
+				"sound_single_shot"	"WeaponMedigun.Healing.Kritz"
+				"player_bodygroups"
+				{
+					"medic_backpack"			"1"
+				}
+			}
+		}
+		"13045"
+		{
+			"name"						"The Sandvich"	//needs this in order to actually have the taunt
+			"prefab"					"weapon_sandvich"
+			"model_world"				"models/weapons/w_models/w_sandwich.mdl"
+			"model_player"				"models/weapons/v_models/v_sandwich_heavy.mdl"
+			"attach_to_hands"			"2"
+			"extra_wearable"			"models/player/items/sandvich_lunchbox.mdl"
+			"item_description"			"Forces a cooldown upon consumption
+Eat to regain up to 150 health
+
+Alt-Fire: Share Sandvich with a friend (Medium health kit)"
+			"attributes"
+			{
+				"lunchbox healing increased"
+				{
+					"attribute_class"	"lunchbox_healing_scale"
+					"value"				"1.25"
+				}
+				"special taunt"
+				{
+					"attribute_class"	"lunchbox_force_cooldown"
+					"value"				"1"
+				}
+				"special taunt"
+				{
+					"attribute_class"	"mod_ammo_per_shot"
+					"value"				"1"
+				}
+				"special taunt"
+				{
+					"attribute_class"	"special_taunt"
+					"value"				"1"
+				}
+				"mod lunchbox critboostable"
+				{
+					"attribute_class"	"mod_lunchbox_critboostable"
+					"value"				"1"
+				}
+			}
+		}
+		"13046"
+		{
+			"name"						"TF_WEAPON_BISON"
+			"prefab"					"weapon_shotgun"
+			"item_quality"				"normal"
+			"show_in_armory"			"1"
+			"item_slot"					"secondary"
+
+			"item_name"					"The Righteous Bison"
+			"item_type_name"			"Shotgun"
+			"item_description"			"
+Credits:
+Weapon - 'Mommyplier!'"
+			"item_logname"				"bison"
+			"item_iconname"				"bison"
+			"attach_to_hands"			"1"
+			"used_by_classes"
+			{
+				"soldier"					"secondary"
+			}
+			"static_attrs"
+			{
+				"meter_label"                               "BISON"
+			}
+			"attributes"
+			{
+				"uses ammo meter with passive loading"
+				{
+					"attribute_class"	"use_ammo_meter"
+					"value"				"1"
+				}
+				"energy weapon no ammo" 
+				{
+					"attribute_class"	"energy_weapon_no_ammo"
+					"value"				"1"
+				}
+				
+				"hidden separator"			"1"
+				
+				"damage penalty"
+				{
+					"attribute_class"	"mult_dmg"
+					"value"				"7"
+				}
+				"Projectile speed increased hidden"
+				{
+					"attribute_class"	"mult_projectile_speed"
+					"value"				"1.6"
+				}
+				"override projectile type"
+				{
+					"attribute_class"	"override_projectile_type"
+					"value"				"32"
+				}
+				"Reload time increased"
+				{
+					"attribute_class"	"mult_reload_time"
+					"value"				"3"
+				}
+				"weapon spread bonus"
+				{
+					"attribute_class"	"mult_spread_scale"
+					"value"				"0.35"
+				}
+				"clip size bonus"
+				{
+					"attribute_class"	"mult_clipsize"
+					"value"				"0.67"
+				}
+				"rocket gravity"
+				{
+					"attribute_class"	"mod_rocket_gravity"
+					"value"				"-1.5"
+				}
+				"custom rampup"
+				{
+					"attribute_class"	"mod_custom_rampup"
+					"value"				"1.5"
+				}
+			}
+			"visuals"
+			{
+				"sound_single_shot"		"Weapon_Raiding.Single"
+				"sound_burst"			"Weapon_Raiding.SingleCrit"
+			}
+		}
+		"13047"
+		{
+			"name"						"TF_WEAPON_FLARE_DETONATOR_CANCELLED"
+			"prefab"					"weapon_flaregun"
+			"image_inventory"			"backpack/weapons/w_models/w_pilot_flaregun"
+			"model_world"				"models/weapons/w_models/w_pilot_flaregun.mdl"			
+			"model_player"				"models/weapons/v_models/v_pilot_flaregun_pyro.mdl"
+			"attach_to_hands"			"2"
+			"used_by_classes"
+			{
+				"pyro"					"1"
+			}
+			"show_in_armory"			"1"
+			"attributes"
+			{
+				"allowed in medieval mode"
+				{
+					"attribute_class"	"allowed_in_medieval_mode"
+					"value"				"1"
+				}
+			    "strange restriction type 1"
+				{
+					"attribute_class"	"set_dmgtype_ignite"
+					"value" 			"1"
+				}
+			    "grenade no spin"
+				{
+					"attribute_class"	"grenade_no_spin"
+					"value" 			"1"
+				}	
+				"sticky air burst mode"
+				{
+					"attribute_class"	"set_detonate_mode"
+					"value"				"3"
+				}
+				"weapon_stattrak_module_scale"												
+				{
+					"attribute_class"	"mult_dmg"
+					"value" 			"2.3333"
+				}	
+				"weapon_stattrak_module_scale"
+				{
+					"attribute_class"	"blast_dmg_to_self"
+					"value" 			"2.3333"
+				}	
+				"weapon_stattrak_module_scale"
+				{
+					"attribute_class"	"mult_dmgself_push_force"
+					"value" 			"2.3333"
+				}	
+				"custom projectile model"
+				{
+					"attribute_class"	"custom_projectile_model"
+					"value"				"models/weapons/w_models/w_pilot_flaregun_shell.mdl"
+				}
+				"override projectile type"
+				{
+					"attribute_class"	"override_projectile_type"
+					"value"				"3"
+				}
+			}
+		}
+		"13048"	//a joke.
+		{
+			"name"						"TF_WEAPON_BRICK_CANNON"
+			"prefab"					"weapon_aagun"
+			"item_description"			"#TF_Weapon_Minigun_Desc"
+			"item_class"				"tf_weapon_minigun"
+			"used_by_classes"
+			{
+				"heavy"					"1"
+			}
+			"show_in_armory"			"0"
+			"item_logname"				"brick_cannon"
+			"item_iconname"				"brick_cannon"
+			"image_inventory"			"backpack/weapons/w_models/w_aagun"
+			"model_world"				"models/weapons/w_models/w_aagun.mdl"
+			"model_player"				"models/weapons/v_models/v_aagun_heavy.mdl"
+			"attach_to_hands"			"2"
+			"item_name"					"The Brick Cannon"
+			"attributes"
+			{
+				"brick mini-crit long range"
+				{
+					"attribute_class"	"mod_brick_minicrit_over_time"
+					"value"				"0.6"
+				}
+				
+				"hidden separator"			"1"
+				
+				"damage bonus"
+				{
+					"attribute_class"	"mult_dmg"
+					"value"				"4"
+				}
+				"fire rate bonus"
+				{
+					"attribute_class"	"mult_postfiredelay"
+					"value"				"1"
+				}
+				"override projectile type"
+				{
+					"attribute_class"	"override_projectile_type"
+					"value"				"33"
+				}
+			}
+			"visuals"
+			{
+				"sound_empty"			"Weapon_AAGun.ClipEmpty"
+				"sound_double_shot"		"Weapon_AAGun.Fire"
+				"sound_burst"			"Weapon_AAGun.FireCrit"
+				"sound_special1"		"BaseExplosionEffect.Sound"
+				"animation_replacement"
+				{
+					"ACT_MP_ATTACK_STAND_PRIMARY"				"ACT_MP_ATTACK_STAND_PRIMARY_ALT"
+					"ACT_MP_ATTACK_CROUCH_PRIMARY"				"ACT_MP_ATTACK_CROUCH_PRIMARY_ALT"
+					"ACT_MP_ATTACK_SWIM_PRIMARY"				"ACT_MP_ATTACK_SWIM_PRIMARY_ALT"
+				}
+			}
+			"static_attrs"
+			{
+				"min_viewmodel_offset"					"10 5 -9"
+			}
+			"mouse_pressed_sound"		"#ui/item_heavier_gun_pickup.wav"
+			"drop_sound"				"#ui/item_heavier_gun_drop.wav"
+		}
+		"13049"
+		{
+			"name"						"TF_WEARABLE_ENCHANTMENT"
+			"prefab"					"weapon_stickybomb_launcher"
+			"item_class"				"tf_wearable"
+			"show_in_armory"			"1"
+			"propername"				"0"
+			"item_name"					"Unusual Drunken Fury"
+			"item_type_name"			"Enchantment"
+			"item_quality"				"rarity4"
+			"item_description"			"
+Credits:
+Weapon - 'Mommyplier!'"
+			"attach_to_hands"			"2"
+			"act_as_wearable"			"1"
+			"used_by_classes"
+			{
+				"demoman"				"1"
+			}
+			"attributes"
+			{
+				"move speed bonus"
+				{
+					"attribute_class"	"mult_player_movespeed"
+					"value"				"1.15"
+				}
+				"wearable add cond on right click"
+				{
+					"attribute_class"	"add_wearable_cond_on_secondary_attack"
+					"value"				"17 1.75 8"
+				}
+				"wearable cond on effect percent"
+				{
+					"attribute_class"	"add_wearable_cond_on_effect_percent"
+					"value"				"33 0.57142857142"	//0.75s into charge
+				}
+				"melee taken becomes minicrit on wearer"
+				{
+					"attribute_class"	"melee_taken_becomes_minicrit_wearer"
+					"value"				"1"
+				}
+				"mult shield bash damage"
+				{
+					"attribute_class"	"mult_shield_bash_damage"
+					"value"				"1.3"
+				}
+				"meter_label"
+				{
+					"attribute_class"	"meter_label"
+					"value"				"CHARGE"
+				}
+			}
+			"mouse_pressed_sound"		"#ui/item_heavy_gun_pickup.wav"
+			"drop_sound"				"#ui/item_heavy_gun_drop.wav"
+		}
+		"13050"
+		{
+			"name"						"TF_WEAPON_ROCKETLAUNCHER_AIRSTRIKE"
+			"prefab"					"weapon_rocketlauncher"
+			"show_in_armory"			"1"
+			"item_name"					"Air Strike"
+			"item_description"			"#TF_Weapon_RocketLauncherBeta_Desc"
+			"propername"				"1"
+			"item_logname"				"libertylauncher"
+			"item_iconname"				"libertylauncher"
+			"image_inventory"			"backpack/weapons/w_models/w_rpg"
+			"model_world"				"models/weapons/w_models/w_rpg.mdl"
+			"model_player"				"models/weapons/v_models/v_rpg_soldier.mdl"
+			"attach_to_hands"			"2"
+			"attributes"
+			{
+				"fire rate bonus"
+				{
+					"attribute_class"	"mult_postfiredelay"
+					"value"				"0.3"
+				}
+				"mod mini-crit simple airborne"
+				{
+					"attribute_class"	"mini_crit_airborne_simple"
+					"value"				"1"
+				}
+				"rocket jump damage reduction weapon"
+				{
+					"attribute_class"	"rocket_jump_dmg_reduction_weapon"
+					"value"				"0.8"
+				}
+				"damage penalty"
+				{
+					"attribute_class"	"mult_dmg"
+					"value"				"0.6"
+				}
+			}
+			"visuals"
+			{
+				"sound_single_shot"		"Weapon_BetaRPG.Single"
+				"sound_burst"			"Weapon_BetaRPG.SingleCrit"
+			}
+			"mouse_pressed_sound"		"#ui/item_heavier_gun_pickup.wav"
+			"drop_sound"				"#ui/item_heavier_gun_drop.wav"
+		}
+		"13051"
+		{
+			"name"						"TF_WEAPON_GUNBOATS_GRAVITY"
+			"prefab"					"valve"
+			"show_in_armory"			"1"
+			"item_class"				"tf_wearable"
+			"item_name"					"Apollo Booms"
+			"item_description"			"#TF_Weapon_Gunboats_Desc"
+			"item_type_name"			"Hydraulic "
+			"item_slot"					"secondary"
+			"equip_region"				"feet"
+			"anim_slot"					"FORCE_NOT_USED"
+			"item_quality"				"normal"
+			"propername"				"1"
+			"image_inventory"			"backpack/weapons/c_models/c_rocketboots_soldier"
+			"model_player"				"models/weapons/c_models/c_rocketboots_soldier.mdl"
+			"used_by_classes"
+			{
+				"soldier"				"1"
+			}
+			"loadondemand"				"1"
+			"act_as_wearable"			"1"
+			"attributes"
+			{
+				"anti gravity boots"
+				{
+					"attribute_class"	"anti_gravity_boots"
+					"value"				"1"
+				}
+				"gravity mod wearer reduced"
+				{
+					"attribute_class"	"gravity_mod_wearer"
+					"value"				"0.5"
+				}
+				"allowed in medieval mode"
+				{
+					"attribute_class"	"allowed_in_medieval_mode"
+					"value"				"1"
+				}
+				"armor footsteps"
+				{
+					"attribute_class"	"mod_armor_footsteps"
+					"value"				"1"
+				}
+			}
+			"mouse_pressed_sound"		"#ui/item_metal_weapon_pickup.wav"
+			"drop_sound"				"#ui/item_metal_weapon_drop.wav"
+		}
+		"13052"
+		{
+			"name"						"TF_WEAPON_ROCKETLAUNCHER_ELECTRIC"
+			"prefab"					"weapon_rocketlauncher"
+			"show_in_armory"			"1"
+			"item_name"					"Boom Blaster"
+			"item_description"			"#TF_Weapon_RocketLauncherBeta_Desc"
+			"propername"				"1"
+			"item_logname"				"libertylauncher"
+			"item_iconname"				"libertylauncher"
+			"image_inventory"			"backpack/weapons/w_models/w_rpg"
+			"model_world"				"models/weapons/w_models/w_rpg.mdl"
+			"model_player"				"models/weapons/v_models/v_rpg_soldier.mdl"
+			"attach_to_hands"			"2"
+			"attributes"
+			{
+				"fire rate bonus"
+				{
+					"attribute_class"	"mult_postfiredelay"
+					"value"				"0.8"
+				}
+				"instant reload on direct hit"
+				{
+					"attribute_class"	"instant_reload_on_direct_hit"
+					"value"				"1"
+				}
+				"clip size penalty"
+				{
+					"attribute_class"	"mult_clipsize"
+					"value"				"0.25"
+				}
+			}
+			"visuals"
+			{
+				"sound_single_shot"		"Weapon_BetaRPG.Single"
+				"sound_burst"			"Weapon_BetaRPG.SingleCrit"
+			}
+			"mouse_pressed_sound"		"#ui/item_heavier_gun_pickup.wav"
+			"drop_sound"				"#ui/item_heavier_gun_drop.wav"
+		}
+		"13053"
+		{
+			"name"						"TF_WEAPON_SAPPER_SELFDESTRUCT"
+			"prefab"					"weapon_sapper"
+			"item_description"			"Sapper cannot be manually destroyed, and instead will destroy itself after a period of time"
+			"model_world"				"models/weapons/w_models/w_sapper.mdl"
+			"model_player"				"models/weapons/v_models/v_sapper_spy.mdl"
+			"show_in_armory"			"1"
+			"attach_to_hands"			"2"
+			"attributes"
+			{
+				"sapper damages self"
+				{
+					"attribute_class"	"sapper_damages_self"
+					"value"				"100"
+				}
+				"sapper no destroy"
+				{
+					"attribute_class"	"mult_sapper_health"
+					"value"				"100"
+				}
+				"sapper damage penalty"
+				{
+					"attribute_class"	"mult_sapper_damage"
+					"value"				"0"
+				}
+			}
+		}
+		"13054"
+		{
+			"name"						"TF_WEAPON_GRENADELAUNCHER_DISTANCEMOD"
+			"prefab"					"weapon_grenade_launcher"
+			"show_in_armory"					"1"
+			"item_description"			"#TF_Weapon_GrenadeLauncher_Desc"
+			"model_world"				"models/weapons/w_models/w_grenadelauncher.mdl"
+			"model_player"				"models/weapons/v_models/v_grenadelauncher_demo.mdl"
+			"attach_to_hands"			"2"
+			"attributes"
+			{
+				"custom falloff"
+				{
+					"attribute_class"	"mod_custom_falloff"
+					"value"				"0.5"
+				}
+				"custom rampup"
+				{
+					"attribute_class"	"mod_custom_rampup"
+					"value"				"1.75"
+				}
+				"shorter damage falloff distance"	// i deemed this neccecary since it was consistently hitting >100 damage without having any self damage.
+				{
+					"attribute_class"	"mult_falloff_distance"
+					"value"				"0.5"
+				}
+				"blast dmg to self decreased"
+				{
+					"attribute_class"	"blast_dmg_to_self"
+					"value" 			"0.33"
+				}	
+				"damage penalty"
+				{
+					"attribute_class"	"mult_dmg"
+					"value"				"0.75"
+				}
+			}
+		}
+		"13055"	//consider reworking this into a weapon based on jump height instead
+		{
+			"name"						"TF_WEAPON_SCATTERGUN_FOX_CANCELLED"
+			"prefab"					"weapon_scattergun"
+			"show_in_armory"			"0"
+			"item_description"			"
+i dont think this is balanced but we'll see
+			
+Credits:
+Weapon - 'Mommyplier!'"
+			"item_name"					"The Fox Muzzle"
+			"item_type_name"			"Uhhh..."
+			"image_inventory"			"backpack/weapons/c_models/c_fapopper/c_fapopper"	//tf?? why did kocw give it this name??
+			"model_world"				"models/weapons/c_models/c_fap/c_fap_scout.mdl"
+			"model_player"				"models/weapons/v_models/v_fap_scout.mdl"
+			"attach_to_hands"			"2"
+			"attributes"
+			{
+				"bigass single shot holey fuck"
+				{
+					"attribute_class"	"dmmuy"
+					"value"				"0"
+				}
+				"move speed and jump height bonus"
+				{
+					"attribute_class"	"mult_player_movespeed"
+					"value"				"1.1"
+				}
+			    "deploy time decreased"
+				{
+					"attribute_class"	"mult_deploy_time"
+					"value"				"0.55"
+				}
+				"fire rate penalty"
+				{
+					"attribute_class"	"mult_postfiredelay"
+					"value"				"1.5"
+				}
+				"max health additive penalty"										
+				{
+					"attribute_class"	"add_maxhealth"
+					"value" 			"-15"
+				}
+				
+				"hidden separator"			"1"
+				
+				"decreased jump height"
+				{
+					"attribute_class"	"mod_jump_height"
+					"value"				"1.1"
+				}
+				"maxammo primary reduced"
+				{
+					"attribute_class"	"mult_maxammo_primary"
+					"value"				"0.25"
+				}
+				"maxammo primary reduced"
+				{
+					"attribute_class"	"mult_maxammo_secondary"
+					"value"				"2"
+				}
+				"maxammo primary reduced"
+				{
+					"attribute_class"	"mult_maxammo_grenades2"
+					"value"				"2"
+				}
+				"maxammo primary reduced"
+				{
+					"attribute_class"	"mult_maxammo_grenades1"
+					"value"				"2"
+				}
+				"mod max primary clip override"
+				{
+					"attribute_class"	"mod_max_primary_clip_override"
+					"value"				"-1"
+				}
+				"cannot pick up intelligence"
+				{
+					"attribute_class"		"cannot_pick_up_intelligence"
+					"value"					"1"
+				}
+				"decrease player capture value"
+				{
+					"attribute_class"		"add_player_capturevalue"
+					"value" 				"-1"
+				}
+				"allowed in medieval mode"
+				{
+					"attribute_class"		"allowed_in_medieval_mode"
+					"value"					"1"
+				}
+			}
+			"visuals"
+			{
+				"tracer_effect"         "db_tracer01"
+			}
+		}
+		"13056"
+		{
+			"name"						"TF_WEAPON_GRENADELAUNCHER_LOCHNLOAD"
+			"prefab"					"weapon_grenade_launcher"
+			"show_in_armory"					"1"
+			"item_description"			"#TF_Weapon_GrenadeLauncher_Desc"
+			"model_world"				"models/weapons/w_models/w_grenadelauncher.mdl"
+			"model_player"				"models/weapons/v_models/v_grenadelauncher_demo.mdl"
+			"attach_to_hands"			"2"
+			"attributes"
+			{
+				"Projectile speed increased"
+				{
+					"attribute_class"	"mult_projectile_speed"
+					"value"				"1.5"
+				}
+				"grenade no spin"
+				{
+					"attribute_class"	"grenade_no_spin"
+					"value"				"1"
+				}
+				"clip size penalty"
+				{
+					"attribute_class"	"mult_clipsize"
+					"value"				"0.5"
+				}
+				"sticky air burst mode"
+				{
+					"attribute_class"	"set_detonate_mode"
+					"value"				"2"
+				}
+				"damage penalty hidden"
+				{
+					"attribute_class"	"fuse_mult"
+					"value"				"69420"	//we don't want detonation by timer
+				}
+			}
+		}
+		"13057"
+		{
+			"name"						"TF_WEAPON_INVIS_SAND"
+			"show_in_armory"			"1"
+			"item_class"				"tf_weapon_invis"
+			"item_name"					"#TF_Weapon_SpeedWatch"
+			"item_type_name"			"#TF_Weapon_Watch"
+			"item_description"			"#TF_Weapon_SpeedWatch_Desc"
+			"item_slot"					"pda2"
+			"anim_slot"					"FORCE_NOT_USED"
+			"image_inventory"			"backpack/weapons/v_models/v_stopwatch"
+			"model_player"				"models/weapons/v_models/v_stopwatch_spy.mdl"
+			"attach_to_hands"			"0"
+			"used_by_classes"
+			{
+				"spy"					"1"
+			}
+			"static_attrs"
+			{
+				"min_viewmodel_offset"					"8 0 -6"
+			}
+			"attributes"
+			{
+				"cloak consume rate decreased"
+				{
+					"attribute_class"	"mult_cloak_meter_consume_rate"
+					"value"				"0.5"
+				}
+				"cloak regen rate decreased"
+				{
+					"attribute_class"	"mult_cloak_meter_regen_rate"
+					"value"				"0"
+				}	
+				// hidden
+				"hidden separator"		"1"
+				"mod min cloak to activate HIDDEN"
+				{
+					"attribute_class"	"mod_min_cloak_to_activate"
+					"value"				"0.01"
+				}
+			}
+			"visuals"
+			{
+				"sound_special1"		"Player.Spy_SpeedCloak"
+				"sound_special2"		"Player.Spy_SpeedUnCloak"
+			}
+			"mouse_pressed_sound"		"#ui/item_watch_pickup.wav"
+			"drop_sound"				"#ui/item_watch_drop.wav"
+		}
+		"13058"
+		{
+			"name"						"TF_WEAPON_BOTTLE_BATON"
+			"prefab"					"weapon_bottle"
+			"show_in_armory"					"1"
+			"item_name"					"Blunt Force"
+			"item_type_name"			"Baton"
+			"item_description"			"
+Credits:
+Weapon - 'Mommyplier!'"
+			"model_world"				"models/weapons/w_models/w_bottle.mdl"
+			"model_player"				"models/weapons/v_models/v_bottle_demoman.mdl"
+			"attach_to_hands"			"2"
+			"attributes"
+			{
+				"bleeding duration"
+				{
+					"attribute_class"	"bleeding_duration"
+					"value"				"8"
+				}
+				"mult_dmgtaken_active"
+				{
+					"attribute_class"	"mult_dmgtaken_active"
+					"value"				"1.2"
+				}
+				
+				"hidden separator"		"1"
+			}
+		}
+		"13059"
+		{
+			"name"						"TF_WEAPON_BOTTLE_SWORD"
+			"prefab"					"weapon_bottle"
+			"show_in_armory"					"1"
+			"item_name"					"Unnamed Sword Weapon"
+			"item_type_name"			"Sword"
+			"item_description"			"
+Credits:
+Weapon - 'Mommyplier!'"
+			"model_world"				"models/weapons/w_models/w_bottle.mdl"
+			"model_player"				"models/weapons/v_models/v_bottle_demoman.mdl"
+			"attach_to_hands"			"2"
+			"attributes"
+			{
+				"damage bonus"
+				{
+					"attribute_class"	"mult_dmg"
+					"value"				"1.35"
+				}
+				"mark self on miss"
+				{
+					"attribute_class"	"self_mark_for_death_on_miss"
+					"value"				"8"
+				}
+				
+				"hidden separator"		"1"
+			}
+		}
 	}
 	
 	"attributes"
@@ -3355,10 +4242,11 @@ Weapon - 'Mommyplier!'"
 		{
 			"name"					"brimstone DISPLAY ONLY 1"
 			"attribute_class"		"brimstone_display_1"
-			"description_string"	"HYPE meter takes 350 damage to fill"
+			"description_string"	"Press the Use key to activate HYPE
+HYPE provides infinite clip for 10 seconds"
 			"description_format"	"value_is_additive"
 			"hidden"				"0"
-			"effect_type"			"neutral"
+			"effect_type"			"positive"
 		}
 		"10001"
 		{
@@ -3404,6 +4292,20 @@ and boosts firing speed"
 			"description_string"	"+%s1% faster move speed while active"												
 			"description_format"	"value_is_percentage"
 			"effect_type"			"positive"
+		}
+		"7630"
+		{
+			"name"					"No Fatal Backstab"
+			"description_string"	"Backstabs do not kill enemies instantly"												
+			"description_format"	"value_is_additive"
+			"effect_type"			"negative"
+		}
+		"7592"
+		{
+			"name"					"fuse penalty"
+			"description_string"	"%s1% longer fuse time"												
+			"description_format"	"value_is_percentage"
+			"effect_type"			"negative"
 		}
 		
 		// project ares attrs
@@ -3793,6 +4695,69 @@ and boosts firing speed"
 			"description_format"	"value_is_inverted_percentage"
 			"hidden"	"0"
 			"effect_type"	"negative"
+			"stored_as_integer"	"0"
+		}
+		"13039"
+		{
+			"name"	"lunchbox healing increased"
+			"attribute_class" "lunchbox_healing_scale"
+			"description_string" "+%s1% increased healing rate"
+			"description_format" "value_is_percentage"
+			"hidden" "1"
+			"effect_type" "positive"
+			"stored_as_integer" "0"
+		}
+		"13040"
+		{
+			"name"	"sapper no destroy"
+			"attribute_class" "lunchbox_healing_scale"
+			"description_string" "+%s1% increased healing rate"
+			"description_format" "value_is_percentage"
+			"hidden" "1"
+			"effect_type" "positive"
+			"stored_as_integer" "0"
+		}
+		"13041"
+		{
+			"name"	"blast dmg to self decreased"
+			"attribute_class" "lunchbox_healing_scale"
+			"description_string" "%s1% damage to self"
+			"description_format" "value_is_percentage"
+			"hidden" "0"
+			"effect_type" "positive"
+			"stored_as_integer" "0"
+		}
+		"13042"
+		{
+			"name"	"move speed and jump height bonus"
+			"attribute_class"	"mult_player_movespeed"
+			"description_string"	"+%s1% move speed and jump height on wearer"
+			"description_format"	"value_is_percentage"
+			"hidden"	"0"
+			"effect_type"	"positive"
+			"armory_Desc"	"on_wearer"
+			"stored_as_integer"	"0"
+		}
+		"13043"
+		{
+			"name"	"bigass single shot holey fuck"
+			"attribute_class"	"mult_player_movespeed"
+			"description_string"	"Fires directly from a limited ammo reserve"
+			"description_format"	"value_is_percentage"
+			"hidden"	"0"
+			"effect_type"	"neutral"
+			"armory_Desc"	"on_wearer"
+			"stored_as_integer"	"0"
+		}
+		"13042"
+		{
+			"name"	"increased jump height wearer"
+			"attribute_class"	"mod_jump_height"
+			"description_string"	"+%s1% jump height on wearer"
+			"description_format"	"value_is_percentage"
+			"hidden"	"0"
+			"effect_type"	"positive"
+			"armory_Desc"	"on_wearer"
 			"stored_as_integer"	"0"
 		}
 		
